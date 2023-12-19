@@ -10,6 +10,7 @@ import { I18nextProvider } from 'react-i18next'
 import { ModalProvider } from '@/providers/modal-provider'
 import { ToastProvider } from '@/providers/toast-provider'
 import { PreviewModalProvider } from '@/providers/preview-modal-provider'
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,20 +31,22 @@ i18next.init({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <I18nextProvider i18n={i18next}>
-      <html lang='en'>
-        <body className={inter.className}>
-        <ThemeProvider 
-          attribute="class" 
-          defaultTheme="system" 
-          enableSystem
-        >
-          <ToastProvider />
-          <ModalProvider />
-          <PreviewModalProvider />
-          {children}
-          </ThemeProvider>
-        </body>
-      </html>
+      <ClerkProvider>
+        <html lang='en'>
+          <body className={inter.className}>
+          <ThemeProvider 
+            attribute="class" 
+            defaultTheme="dark" 
+            enableSystem
+          >
+            <ToastProvider />
+            <ModalProvider />
+            <PreviewModalProvider />
+            {children}
+            </ThemeProvider>
+          </body>
+        </html>
+      </ClerkProvider>
     </I18nextProvider>
   );
 }

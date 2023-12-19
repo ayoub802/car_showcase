@@ -1,4 +1,6 @@
+import { auth } from "@clerk/nextjs";
 import Navbar from "@components/navbar";
+import { redirect } from "next/navigation";
 import { useRouter } from "next/router";
 
 
@@ -13,8 +15,11 @@ export default async function DashboardLayout({
     children: React.ReactNode
   }) {
 
-   
-
+    const { userId } = auth();
+ 
+    if (!userId) {
+      redirect('/sign-in');
+    }
     return (
       <>  
           <Navbar />

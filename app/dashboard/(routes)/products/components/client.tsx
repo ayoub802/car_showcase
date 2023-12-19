@@ -34,18 +34,10 @@ export const ProductsClient: React.FC<ProductsClientProps> =  ({
 })  => {
   const params = useParams();
   const router = useRouter();
-  const [isOpenModel, setIsOpenModel] = useState(false)
   const [categories, setCategories] = useState<any>([])
   const [images, setImages] = useState<File | null>(null);
-  const maxNumber = 69;
 
-  const { register, handleSubmit } = useForm()
-  // const defaultValues =  {
-  //   name: '',
-  //   // images: [],
-  //   // price: 0,
-  //   // categoryId: '',
-  // }
+
 
   const form = useForm<ProductFormValues>({
     resolver: zodResolver(formSchema),
@@ -71,41 +63,8 @@ export const ProductsClient: React.FC<ProductsClientProps> =  ({
     fetchCategroy()
   }, [])
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files && e.target.files[0];
-    setImages(file || null);
-  };
 
-  const onSubmit = async (data: any) => {
-    // try {
-    //   setLoading(true);
-    //   const response = await axios.post('/api/product',values);
-    //   // window.location.assign(`/${response.data.id}`);
-    //   router.refresh();
-    //   toast.success("Product Added");
-    //   console.log(response.data);
-      
-    // } catch (error) {
-    //   toast.error('Something went wrong');
-    // } finally {
-    //   setLoading(false);
-    // }
-    console.log(data);
-  };
-  // const categories = await prismadb.category.findMany({});
-  const [name, setName] = useState('');
-  const [image, setImage] = useState<null | File>(null);
 
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files && e.target.files[0];
-    setImage(selectedFile || null);
-  };
-
-//   const onChangeFile = (event: ChangeEvent<HTMLInputElement>) => {
-//     for (let i = 0; i < event.target.files.length; i++) {
-//          images.push(event.target.files[i]);  
-//     }
-// }
   return (
     <> 
       <div className="flex items-center justify-between">

@@ -1,16 +1,16 @@
 import React from 'react'
-import Automobile from './Automobile'
 
+import BoutiqueCom from './boutique'
 
 export const metadata = {
     title: 'Fusiocoat – Permanent Protective Coatings',
     description: 'fusiocoat E-Commerce Dashboard',
   }
-export default function Auto() {
+export default function Boutique() {
 
   return (
     <>
-      <Automobile />
+      <BoutiqueCom />
     </>
   )
 }

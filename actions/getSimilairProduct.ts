@@ -21,7 +21,7 @@ interface Product {
 //   interface Query {
 //     categoryId?: string;
 //   }
-const URL=`http://localhost:3000/api/product/similair`;
+const URL=`${process.env.NEXT_PUBLIC_API_URL}/api/product/similair`;
 
 const getSmilairProducts = async (id: string): Promise<Product[]> => {
 

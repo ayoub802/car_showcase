@@ -22,7 +22,7 @@ interface Product {
 //   interface Query {
 //     categoryId?: string;
 //   }
-const URL=`http://localhost:3000/api/product`;
+const URL=`${process.env.NEXT_PUBLIC_API_URL}/api/product`;
 
 const getProducts = async (): Promise<Product[]> => {
 

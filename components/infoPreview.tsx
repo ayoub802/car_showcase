@@ -23,8 +23,6 @@ interface Product {
 import { Button } from "./ui/button";
 import { useState } from "react";
 import useCart from "@/hooks/use-cart";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import Currency from "./currency";
 
 interface InfoProps {
   data: Product

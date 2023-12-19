@@ -3,7 +3,7 @@ interface Category {
     name: string;
 };
 
-const URL=`http://localhost:3000/api/stores`;
+const URL=`${process.env.NEXT_PUBLIC_API_URL}/api/stores`;
 
 const getCategories = async (): Promise<Category[]> => {
   const res = await fetch(URL);

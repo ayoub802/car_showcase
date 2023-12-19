@@ -107,7 +107,7 @@ function Partner() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input disabled={loading} className='!border-[#000] placeholder:text-[#000]' placeholder={t("Nom* et Prénom")} {...field} />
+                    <Input disabled={loading} className='!border-[#000] placeholder:text-[#000] bg-transparent' placeholder={t("Nom* et Prénom")} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -119,7 +119,7 @@ function Partner() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="text" disabled={loading} className='!border-[#000] placeholder:text-[#000]' placeholder={t("Socieéte (si applicable)")} {...field} />
+                    <Input type="text" disabled={loading} className='!border-[#000] placeholder:text-[#000] bg-transparent' placeholder={t("Socieéte (si applicable)")} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -131,7 +131,7 @@ function Partner() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="text" disabled={loading} className='!border-[#000] placeholder:text-[#000]' placeholder={t("Email*")} {...field} />
+                    <Input type="text" disabled={loading} className='!border-[#000] placeholder:text-[#000] bg-transparent' placeholder={t("Email*")} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -143,7 +143,7 @@ function Partner() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="text" disabled={loading} className='!border-[#000] placeholder:text-[#000]' placeholder={t("Téléphone*")} {...field} />
+                    <Input type="text" disabled={loading} className='!border-[#000] placeholder:text-[#000] bg-transparent' placeholder={t("Téléphone*")} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
