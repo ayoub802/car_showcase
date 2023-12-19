@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 
 import prismadb from '@/lib/prismadb';
-import { orderBy } from 'firebase/firestore';
 
 export async function POST(
   req: Request,
