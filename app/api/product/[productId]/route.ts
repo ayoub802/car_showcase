@@ -39,13 +39,11 @@ export async function DELETE(
         return new NextResponse("Internal error", { status: 500 });
       }
     };
-
 export async function GET(
   req: Request,
   { params }: { params: IParams }
     ) {
       const { searchParams } = new URL(req.url)
-      const categoryId = searchParams.get('categoryId') || undefined;
       try {
 
         
@@ -57,10 +55,9 @@ export async function GET(
         if (!productId || typeof productId !== 'string') {
           throw new Error('Invalid ID');
         }
-        const product= await prismadb.product.findMany({
+        const product= await prismadb.product.findUnique({
           where: {
             id: productId,
-            categoryId
           },
           include: {
             images: true,
@@ -80,7 +77,6 @@ export async function GET(
         return new NextResponse("Internal error", { status: 500 });
       }
 };
-
 export async function PATCH(
   req: Request,
   { params }: { params: { productId: string, } }
