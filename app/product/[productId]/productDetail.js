@@ -9,18 +9,20 @@ import  ProductSimlair   from '@/components/ProductSimlair';
 import Currency from '@/components/currency';
 import { Footer } from '@components/Footer';
 import React, { useEffect, useState } from 'react';
-import ProductDetailPage from "./productDetail"
+
 export const revalidate = 0;
 
-// interface ProductPageProps {
-//   params: {
-//     productId: string;
-//   },
-// }
 
-const ProductPage = async ({ params }: { params: { productId: string } }) => {
+const ProductDetailPage = async ({ 
+    productId 
+ }) => {
 
-  const product = await getProduct(params.productId);
+
+  const product = await getProduct(productId);
+
+
+  console.log("Product =>", product);
+  
 
   
   if (!product) {
@@ -74,10 +76,9 @@ const ProductPage = async ({ params }: { params: { productId: string } }) => {
 
         </div>
     </div>  
-
   )
 }
 
 
 
-export default ProductPage;
+export default ProductDetailPage;
