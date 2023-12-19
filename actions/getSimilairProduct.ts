@@ -1,4 +1,3 @@
-import qs from "query-string";
 
 interface Category {
     id: string;
