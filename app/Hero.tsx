@@ -32,6 +32,9 @@ import Pattern from "../public/patern.svg"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { useTranslation } from 'react-i18next';
 import "./App.css"
+import { Testimonial } from '@components/Testimonial';
+import { FAQ } from '@components/FAQ';
+import { ProductForm } from '@components/ProductForm';
 
 export const Hero = () => {
 
@@ -253,13 +256,15 @@ export const Hero = () => {
 
         </div>  
     </section>
-    
+    <Testimonial />
+    <FAQ />
     
     <section className="bg-Mgreen relative overflow-hidden">
         <Image width={100} height={100} quality={100} src={Pattern} className="absolute left-0 top-0 w-full h-full object-cover" alt="" />
         <div className="text-center relative z-2 container">
             <p className="text__18 mb-2">NEWSLETTER</p>
             <h2 className="font-bold text__48 mb-8">{t('POUR TOUTE QUESTION MERCI DE NOUS')}  <br />{t('CONTACTER VIA LE FORMULAIRE CI-DESSOUS')}</h2>
+            <ProductForm />
         </div>
     </section>
 
