@@ -8,11 +8,7 @@ export const metadata = {
   description: 'fusiocoat E-Commerce Dashboard',
 }
 
-export default function PartnerLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function PartnerLayout() {
 
 
   return (  

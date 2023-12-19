@@ -7,11 +7,7 @@ export const metadata = {
   description: 'fusiocoat E-Commerce Dashboard',
 }
 
-export default function ContactLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function ContactLayout() {
 
 
   return (  
