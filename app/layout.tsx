@@ -7,6 +7,9 @@ import i18next from 'i18next'
 import global_en from "./translation/en/globale.json"
 import global_fr from "./translation/fr/globale.json"
 import { I18nextProvider } from 'react-i18next'
+import { ModalProvider } from '@/providers/modal-provider'
+import { ToastProvider } from '@/providers/toast-provider'
+import { PreviewModalProvider } from '@/providers/preview-modal-provider'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -34,6 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           defaultTheme="system" 
           enableSystem
         >
+          <ToastProvider />
+          <ModalProvider />
+          <PreviewModalProvider />
           {children}
           </ThemeProvider>
         </body>

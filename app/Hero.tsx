@@ -35,6 +35,7 @@ import "./App.css"
 import { Testimonial } from '@components/Testimonial';
 import { FAQ } from '@components/FAQ';
 import { ProductForm } from '@components/ProductForm';
+import  ProductCard  from '@/components/ProductCard';
 
 export const Hero = () => {
 
@@ -198,6 +199,8 @@ export const Hero = () => {
             </div>
            </div>
          </section>
+         <ProductCard />
+
 
         <section className='bg-black'>
         <div className="container">

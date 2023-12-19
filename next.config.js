@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["cdn.imagin.studio"]
+        domains: ["res.cloudinary.com", 'flowbite.s3.amazonaws.com', "https://tailwindui.com"]
     }
 }
 
