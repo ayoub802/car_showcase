@@ -164,7 +164,7 @@ function Partner() {
             />
 
           </div>
-          <Button disabled={loading} className="inline-block cursor-pointer font-medium text__16 text-Mwhite !rounded-[24px] !border-Mblue bg-Mblue btnClass  uppercase " type="submit">
+          <Button disabled={loading} className="inline-block cursor-pointer font-medium text__16 text-Mwhite !rounded-[24px] !border-Mblue bg-Mblue btnClass hover:text-[#1e19d8] uppercase " type="submit">
           {t('envoyer')}
           </Button>
         </form>

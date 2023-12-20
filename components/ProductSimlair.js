@@ -47,7 +47,7 @@ const ProductSimlair =  ({ product }) => {
   return (
     <>
     <h3 className='font-bold text-[18px] mb-3 gap-2'>Product Similaire</h3>
-    <div className="grid grid-cols-4 mx-auto gap-4">
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mx-auto gap-4">
         {
         similair?.length > 0 && similair.slice(0,4).map((item, index) => (
             <div className="bg-white group cursor-pointer rounded-xl border border-gray-300 p-3 space-y-4">

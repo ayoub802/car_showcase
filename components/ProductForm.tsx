@@ -181,7 +181,7 @@ export const ProductForm = ({
             />
 
           </div>
-          <Button disabled={loading} className="inline-block cursor-pointer font-medium text__16 text-Mwhite !rounded-[24px] !border-Mblue bg-Mblue btnClass  uppercase " type="submit">
+          <Button disabled={loading} className="inline-block cursor-pointer font-medium text__16 text-Mwhite !rounded-[24px] !border-Mblue bg-Mblue btnClass  uppercase hover:text-[#1e19d8]" type="submit">
           {t('envoyer')}
           </Button>
         </form>
