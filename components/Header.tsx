@@ -161,9 +161,12 @@ export const Header = () => {
             <div className={'fixed py-4 w-full z-[9] left-0 top-0 bg-[#010101]'}>
                 <div className="container">
                     <div className='flex justify-between items-center'>
+                      
+                      <div className="block md:hidden">
+                           <HeaderMobile />
+                      </div>
 
-
-                        <Link href='/' className=''>
+                        <Link href='/' className='lg:block hidden'>
                             {
                                 <Image src={Logo} className='md:w-[150px] md:h-[35px] w-[120px] h-[30px]' alt="" />
                             }
@@ -377,129 +380,141 @@ export const Header = () => {
                         }
                         </div>
                         
-                        <div className="lg:hidden flex item-center gap-3">
-                        <HeaderMobile />
+                        <div className="flex justify-between items-center lg:hidden w-full">
+                            <HeaderMobile />
+                             <div>
+                             </div>
+                                <Link href='/' className=''>
+                                    {
+                                        <Image src={Logo} className='md:w-[150px] md:h-[35px] w-[120px] h-[30px]' alt="" />
+                                    }
 
-                        <Sheet>
-                        <SheetTrigger asChild>
-                            <button className="">
-                            <div className="rounded-full justify-center flex items-center relative">
-                            <Bag2
-                                size="22"
-                                color="#FFF"
-                                />
-                                {
-                                    cart.items.length > 0
-                                    ?
-                                    <span className='w-4 h-4 bg-[#d9534f] rounded-full absolute -top-2 -right-2.5 text-[#fff] text-[10px] flex justify-center items-center'>{cart.items.length}</span>
-                                    :
-                                    <></>
-                                }
-                            </div>
-                        </button>
-                        </SheetTrigger>
-                        <SheetContent className='bg-white h-screen flex flex-col '>
-                            <SheetHeader>
-                            <SheetTitle className='text-[#000]'>Shopping cart</SheetTitle>
-                            </SheetHeader>
-                            <div className="mt-8">
-                                <div className="flow-root">
-                                    <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                </Link>
+
+                                <div className="lg:hidden flex item-center gap-3">
+
+                                <Sheet>
+                                <SheetTrigger asChild>
+                                    <button className="">
+                                    <div className="rounded-full justify-center flex items-center relative">
+                                    <Bag2
+                                        size="22"
+                                        color="#FFF"
+                                        />
                                         {
-                                            cart.items.length == 0
+                                            cart.items.length > 0
                                             ?
-                                            <div className='text-center'>
-                                            <h3>La cart est vide</h3>
-                                            </div>
+                                            <span className='w-4 h-4 bg-[#d9534f] rounded-full absolute -top-2 -right-2.5 text-[#fff] text-[10px] flex justify-center items-center'>{cart.items.length}</span>
                                             :
-                                            cart.items.map((item) => (
-                                                <li className="flex py-6" key={item.id}>
-                                                    <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                    <Image onClick={() => handleClick(item)} src={item.images?.[0]?.url} quality={100} width={100} height={100} alt="" className="h-full w-full object-cover object-center" />
-                                                    </div>
-                            
-                                                    <div className="ml-4 flex flex-1 flex-col">
-                                                    <div>
-                                                        <div className="flex justify-between text-base font-medium text-gray-900">
-                                                        <h3>
-                                                            <a href="#" onClick={() => handleClick(item)}>{item.name.length > 20 ? item.name.slice(0, 20 - 3) + '...' : item.name}</a>
-                                                        </h3>
-                                                        <p className="ml-4">{item.price}MAD</p>
-                                                        </div>
-                                                        <p className="mt-1 text-sm text-gray-500">{item.category.name}</p>
-                                                    </div>
-                                                    <div className="flex flex-1 items-center mt-3 justify-between text-sm">
-
-                                                        <div className="inline-flex items-center px-2 font-semibold text-gray-500 border border-gray-300 rounded-md ">
-                                                            <button onClick={() => decrementQuantity(item.id)} className="py-1 pr-2 border-r border-gray-300  dark:text-gray-400 hover:text-gray-700">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash" viewBox="0 0 16 16">
-                                                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z">
-                                                                    </path>
-                                                                    </svg>
-                                                            </button>
-                                                            <span className="w-12 px-2 py-2 text-center border-0 rounded-md bg-gray-50 dark:text-gray-400">{item.quantity}</span>
-                                                            <button onClick={() => incrementQuantity(item.id)} className="py-1 pl-2 border-l border-gray-300  hover:text-gray-700 dark:text-gray-400">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
-                                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z">
-                                                                    </path>
-                                                                    </svg>
-                                                            </button>
-                                                        </div>
-
-                                                        <div className="flex ml-auto">
-                                                        <button onClick={() => onRemove(item)} type="button" className="font-medium text-black">
-                                                            <Trash 
-                                                            size={22}
-                                                            color='#000'
-                                                            />
-                                                        </button>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </li>
-                                            ))
+                                            <></>
                                         }
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <SheetFooter className='mt-auto'>
-                            <SheetClose asChild>
-                                                                
-                            <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
-                                <div className="flex justify-between text-base font-medium text-gray-900">
-                                <p>Subtotal</p>
-                                <p>{totalPrice}MAD</p>
-                                </div>
-                                <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
-                                <div className="mt-6">
-                                <div onClick={() => router.push('/checkout')} className="cursor-pointer flex items-center justify-center rounded-md border border-transparent bg-[#000] px-6 py-3 text-base font-medium text-[#fff] shadow-sm">
-                                    Checkout
-                                </div>
-                                </div>
-                                <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                                <p>
-                                    or <button onClick={() => router.push('/Boutique')} type="button" className="font-medium text-black"> Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
-                                </p>
-                                </div>
-                            </div>
-                            </SheetClose>
-                            </SheetFooter>
-                        </SheetContent>
-                        </Sheet>
-                            <>
-                            {
-                                SelectOption == 'fr'
-                                ?
-                                    <button onClick={() => {handleChangeLanguage("en"); setSelectOption("Eng")}} className='cursor-pointer'>
-                                    <Image alt='' src={Eng} className='w-5 h-5' />
-                                    </button>
-                                :
-                                <button onClick={() => {handleChangeLanguage("fr"); setSelectOption("fr")}} className='cursor-pointer'>
-                                    <Image alt='' src={fr} className='w-5 h-5' />
+                                    </div>
                                 </button>
-                            }
-                            </>
+                                </SheetTrigger>
+                                <SheetContent className='bg-white h-screen flex flex-col '>
+                                    <SheetHeader>
+                                    <SheetTitle className='text-[#000]'>Shopping cart</SheetTitle>
+                                    </SheetHeader>
+                                    <div className="mt-8">
+                                        <div className="flow-root">
+                                            <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                                {
+                                                    cart.items.length == 0
+                                                    ?
+                                                    <div className='text-center'>
+                                                    <h3>La cart est vide</h3>
+                                                    </div>
+                                                    :
+                                                    cart.items.map((item) => (
+                                                        <li className="flex py-6" key={item.id}>
+                                                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                            <Image onClick={() => handleClick(item)} src={item.images?.[0]?.url} quality={100} width={100} height={100} alt="" className="h-full w-full object-cover object-center" />
+                                                            </div>
+                                    
+                                                            <div className="ml-4 flex flex-1 flex-col">
+                                                            <div>
+                                                                <div className="flex justify-between text-base font-medium text-gray-900">
+                                                                <h3>
+                                                                    <a href="#" onClick={() => handleClick(item)}>{item.name.length > 20 ? item.name.slice(0, 20 - 3) + '...' : item.name}</a>
+                                                                </h3>
+                                                                <p className="ml-4">{item.price}MAD</p>
+                                                                </div>
+                                                                <p className="mt-1 text-sm text-gray-500">{item.category.name}</p>
+                                                            </div>
+                                                            <div className="flex flex-1 items-center mt-3 justify-between text-sm">
+
+                                                                <div className="inline-flex items-center px-2 font-semibold text-gray-500 border border-gray-300 rounded-md ">
+                                                                    <button onClick={() => decrementQuantity(item.id)} className="py-1 pr-2 border-r border-gray-300  dark:text-gray-400 hover:text-gray-700">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash" viewBox="0 0 16 16">
+                                                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z">
+                                                                            </path>
+                                                                            </svg>
+                                                                    </button>
+                                                                    <span className="w-12 px-2 py-2 text-center border-0 rounded-md bg-gray-50 dark:text-gray-400">{item.quantity}</span>
+                                                                    <button onClick={() => incrementQuantity(item.id)} className="py-1 pl-2 border-l border-gray-300  hover:text-gray-700 dark:text-gray-400">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
+                                                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z">
+                                                                            </path>
+                                                                            </svg>
+                                                                    </button>
+                                                                </div>
+
+                                                                <div className="flex ml-auto">
+                                                                <button onClick={() => onRemove(item)} type="button" className="font-medium text-black">
+                                                                    <Trash 
+                                                                    size={22}
+                                                                    color='#000'
+                                                                    />
+                                                                </button>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </li>
+                                                    ))
+                                                }
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <SheetFooter className='mt-auto'>
+                                    <SheetClose asChild>
+                                                                        
+                                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                                        <div className="flex justify-between text-base font-medium text-gray-900">
+                                        <p>Subtotal</p>
+                                        <p>{totalPrice}MAD</p>
+                                        </div>
+                                        <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                        <div className="mt-6">
+                                        <div onClick={() => router.push('/checkout')} className="cursor-pointer flex items-center justify-center rounded-md border border-transparent bg-[#000] px-6 py-3 text-base font-medium text-[#fff] shadow-sm">
+                                            Checkout
+                                        </div>
+                                        </div>
+                                        <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                        <p>
+                                            or <button onClick={() => router.push('/Boutique')} type="button" className="font-medium text-black"> Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                                        </p>
+                                        </div>
+                                    </div>
+                                    </SheetClose>
+                                    </SheetFooter>
+                                </SheetContent>
+                                </Sheet>
+                                    <>
+                                    {
+                                        SelectOption == 'fr'
+                                        ?
+                                            <button onClick={() => {handleChangeLanguage("en"); setSelectOption("Eng")}} className='cursor-pointer'>
+                                            <Image alt='' src={Eng} className='w-5 h-5' />
+                                            </button>
+                                        :
+                                        <button onClick={() => {handleChangeLanguage("fr"); setSelectOption("fr")}} className='cursor-pointer'>
+                                            <Image alt='' src={fr} className='w-5 h-5' />
+                                        </button>
+                                    }
+                                    </>
+                                </div>
+
                         </div>
 
 

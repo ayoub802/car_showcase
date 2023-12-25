@@ -14,9 +14,9 @@ export const Footer = () => {
         <div className="container">
             <div className="mb-10 gap-y-8 row">
                 <div className="col-md-3">
-                    <Image width={100} height={100} quality={100} src={Logo} className='w-[150px] h-[35px] mb-2' alt="" />
-                    <p className="text__16 text-[#D4D4D4] mb-4">Revêtements céramiques pour voitures, avions, bâteaux, vitrages</p>
-                    <div className="flex items-center gap-3">
+                    <Image width={100} height={100} quality={100} src={Logo} className='w-[150px] h-[35px] mb-2 mx-auto md:!mx-0' alt="" />
+                    <p className="text__16 text-[#D4D4D4] mb-4 text-center md:!text-left">Revêtements céramiques pour voitures, avions, bâteaux, vitrages</p>
+                    <div className="flex items-center gap-3 justify-center md:justify-normal">
                         <a href="#!" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
                         <Facebook
                             size="18"
@@ -40,7 +40,7 @@ export const Footer = () => {
 
                     </div>
                 </div>
-                <div className="col-12 col-md-2 col-sm-6 offset-md-1">
+                <div className="col-12 col-md-3 col-sm-6 offset-md-1 text-center md:!text-left">
                     <h5 className="font-medium text-[#A3A3A3] text__16 mb-3">NAVIGATION</h5>
                     <div className="flex flex-wrap gap-3 font-medium text__16">
                         <a className="inline-block w-full text-Mwhite" href="/">ACCUEIL</a>
@@ -50,7 +50,7 @@ export const Footer = () => {
                         <a className="inline-block w-full text-Mwhite" href="/Marine">MARINE</a>
                     </div>
                 </div>
-                <div className="col-12 col-md-2 col-sm-6">
+                <div className="col-12 col-md-3 col-sm-6 text-center md:!text-left">
                     <h5 className="font-medium text-[#A3A3A3] text__16 mb-3">MENU</h5>
                     <div className="flex flex-wrap gap-3 font-medium text__16">
                         <a className="inline-block w-full text-Mwhite" href="/blog">En savoir plus</a>
@@ -59,21 +59,11 @@ export const Footer = () => {
                         <a className="inline-block w-full text-Mwhite" href="/contact">Contactez-vous</a>
                     </div>
                 </div>
-                <div className="col-12 col-md-2 col-sm-6">
+                <div className="col-12 col-md-2 col-sm-6 text-center md:!text-left">
                     <h5 className="font-medium text-[#A3A3A3] text__16 mb-3">INFORMATIONS</h5>
                     <div className="flex flex-wrap gap-3 font-medium text__16">
                         <a className="inline-block w-full text-Mwhite">42 Rue Georges Besse, 30000 Nîmes, France</a>
                         <a className="inline-block w-full text-Mwhite">info@fusiocoat.com</a>
-                    </div>
-                </div>
-                <div className="col-12 col-md-2 col-sm-6">
-                    <h5 className="font-medium text-[#A3A3A3] text__16 mb-3">NOS PRODUITS</h5>
-                    <div className="flex flex-wrap gap-3 font-medium text__16">
-                        <a className="inline-block w-full text-Mwhite" href="/privacy">FC-ONE ULTIMATE</a>
-                        <a className="inline-block w-full text-Mwhite" href="/terms">FC-ONE SMART</a>
-                        <a className="inline-block w-full text-Mwhite" href="/terms">FC-BOOST</a>
-                        <a className="inline-block w-full text-Mwhite" href="/terms">FC-GLASS</a>
-                        <a className="inline-block w-full text-Mwhite" href="/terms">FC-TRIM</a>
                     </div>
                 </div>
             </div>

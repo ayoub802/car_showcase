@@ -29,7 +29,7 @@ type MenuItemWithSubMenuProps = {
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 100% 0)`,
+    clipPath: `circle(${height * 2 + 200}px at 0% 0)`,
     transition: {
         type: 'spring',
         stiffness: 20,
@@ -37,7 +37,7 @@ const sidebar = {
     },
 }),
 closed: {
-    clipPath: 'circle(0px at 100% 0)',
+    clipPath: 'circle(0px at 0% 0)',
     transition: {
         type: 'spring',
       stiffness: 400,
@@ -155,7 +155,7 @@ const MenuToggle = ({ toggle, isOpen }: { toggle: any, isOpen: any }) => (
         <>
         <button
           onClick={toggle}
-          className="pointer-events-auto absolute md:right-28 right-24 md:top-[32px] top-[30px] z-30"
+          className="pointer-events-auto absolute md:left-20 left-8 md:top-[32px] top-[30px] z-30"
         >
         <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
