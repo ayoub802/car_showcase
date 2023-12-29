@@ -11,15 +11,18 @@ import Reve2 from "../../public/clock.png"
 import "../App.css"
 import Image from 'next/image'
 import { ArrowRight3 } from 'iconsax-react'
+import { useTranslation } from 'react-i18next'
 function Revetement() {
+  const {t}  = useTranslation("global")
+
   return (
     <div className='w-full overflow-hidden bg-[#000]'>
     <Header />
     <div className='mt-[88px] lg:mt-[98px]'>
-        <Banner image={BannerImage} chemin="Accueil" title="LES REVÊTEMENTS CÉRAMIQUES FUSIOCOAT®"/>
+        <Banner image={BannerImage} chemin="Accueil" title={t("Les revêtements céramiques Fusiocoat")}/>
         <section className='bg-white'>
                 <div className="container">
-                  <h3 className="font-bold text__48 mb-8 text-center">POURQUOI LES REVÊTEMENTS FUSIOCOAT® SUR VOTRE VOITURE ?
+                  <h3 className="font-bold text__48 mb-8 text-center">{t("POURQUOI LES REVÊTEMENTS FUSIOCOAT® SUR VOTRE VOITURE ?")}
                   </h3>
                   <div className="mt-1">
                     <div className="row">
@@ -27,7 +30,7 @@ function Revetement() {
                             <div className="my-4">
                                 <Image alt='' src={Reve} className='w-36 h-36 mx-auto md:!mx-0'/> 
                                 <h3 className='font-medium leading-6 mb-4 text-[#fff] my-4 uppercase bg-Mblue px-3 py-1 rounded-full mx-auto md:!mx-0  max-w-max'>
-                                Investissement Sûr
+                                {t("Investissement Sûr")}
                                 </h3>
                                 <div className="grid gap-2">
                                     <div className="flex items-center gap-2">
@@ -36,7 +39,7 @@ function Revetement() {
                                         color="#000"
                                         />
                                     <h3 className='font-medium text-[12px] leading-6 text-[#000] text-left uppercase'>
-                                        Qualité des surfaces préservées
+                                        {t("Qualité des surfaces préservées")}
                                       </h3>
                                     </div>
                                     <div className="flex items-center gap-2">

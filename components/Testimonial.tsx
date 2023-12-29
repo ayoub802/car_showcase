@@ -34,10 +34,10 @@ export const Testimonial = () => {
                                 </div>
                                 <div>
                                     <h3 className='font-bold leading-6 mb-2 text-[#fff]'>
-                                     SARAH L.
+                                     ABDERRAHMANE L.
                                     </h3>
                                     <p className='leading-6 tracking-[1px] text-[#fff]'>
-                                    "I had my interior detailing done at CarWash, and they did an incredible job! My car looks and smells like new again. The attention to detail and the level of cleanliness they achieved exceeded my expectations. Highly recommended!"
+                                    "{t("FusioCoat a dépassé mes attentes ! Ma voiture n'a jamais été aussi brillante et la protection est vraiment remarquable. Hautement recommandé !")}"
                                     </p>
                                     <div className="flex items-center gap-2 mt-3">
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
@@ -46,7 +46,7 @@ export const Testimonial = () => {
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                     </div>
-                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>AUDI TT / Ceramic Coating</h5>
+                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>MERCEDES / {t("Ceramic Coating")}</h5>
                                 </div>
                             </div>
                         </div>
@@ -60,11 +60,10 @@ export const Testimonial = () => {
                                 </div>
                                 <div>
                                     <h3 className='font-bold leading-6 mb-2 text-[#fff]'>
-                                     SARAH L.
+                                     AYOUB Y.
                                     </h3>
                                     <p className='leading-6 tracking-[1px] text-[#fff]'>
-                                    "I had my interior detailing done at CarWash, and they did an incredible job! My car looks and smells like new again. The attention to detail and the level of cleanliness they achieved exceeded my expectations. Highly recommended!"
-                                    </p>
+                                    "{t("Impressionné par la durabilité de FusioCoat et ses caractéristiques hydrofuges. Facile à appliquer et les résultats parlent d'eux-mêmes. Presque parfait !")}"                                    </p>
                                     <div className="flex items-center gap-2 mt-3">
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
@@ -72,7 +71,7 @@ export const Testimonial = () => {
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                     </div>
-                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>AUDI TT / Ceramic Coating</h5>
+                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>AUDI / {t("Ceramic Coating")}</h5>
                                 </div>
                             </div>
                         </div>
@@ -86,11 +85,10 @@ export const Testimonial = () => {
                                 </div>
                                 <div>
                                     <h3 className='font-bold leading-6 mb-2 text-[#fff]'>
-                                     SARAH L.
+                                     SARAH B.
                                     </h3>
                                     <p className='leading-6 tracking-[1px] text-[#fff]'>
-                                    "I had my interior detailing done at CarWash, and they did an incredible job! My car looks and smells like new again. The attention to detail and the level of cleanliness they achieved exceeded my expectations. Highly recommended!"
-                                    </p>
+                                    "{t('FusioCoat est révolutionnaire ! Ma voiture reste plus propre plus longtemps, et la brillance est tout simplement époustouflante. Chaque centime en vaut la peine.')}"                                    </p>
                                     <div className="flex items-center gap-2 mt-3">
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
@@ -98,7 +96,7 @@ export const Testimonial = () => {
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                     </div>
-                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>AUDI TT / Ceramic Coating</h5>
+                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>FIAT / {t("Ceramic Coating")}</h5>
                                 </div>
                             </div>
                         </div>
@@ -112,11 +110,10 @@ export const Testimonial = () => {
                                 </div>
                                 <div>
                                     <h3 className='font-bold leading-6 mb-2 text-[#fff]'>
-                                     SARAH L.
+                                     KHALID A.
                                     </h3>
                                     <p className='leading-6 tracking-[1px] text-[#fff]'>
-                                    "I had my interior detailing done at CarWash, and they did an incredible job! My car looks and smells like new again. The attention to detail and the level of cleanliness they achieved exceeded my expectations. Highly recommended!"
-                                    </p>
+                                    "{t("FusioCoat a tenu sa promesse. J'ai remarqué une différence significative dans le rejet de l'eau et la finition élégante. Excellent produit !")}"                                    </p>
                                     <div className="flex items-center gap-2 mt-3">
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
@@ -124,7 +121,7 @@ export const Testimonial = () => {
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                         <Image src={Stars} className='w-7 h-7' alt=''/>
                                     </div>
-                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>AUDI TT / Ceramic Coating</h5>
+                                    <h5 className='text-[15px] leading-6 mt-2 text-[#fff]'>RANGE ROVER / {t("Ceramic Coating")}</h5>
                                 </div>
                             </div>
                         </div>
