@@ -28,6 +28,7 @@ import Gellery10 from "../public/pic6.webp"
 import Gellery11 from "../public/pic7.webp"
 import Gellery12 from "../public/pic8.webp"
 import Carsction from "../public/Fusio coat.png"
+import Product3D from "../public/product3d_1.webp"
 import Pattern from "../public/patern.svg"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { useTranslation } from 'react-i18next';
@@ -115,6 +116,11 @@ export const Hero = () => {
                     </div>
                 </div>
             </div>
+         </section>
+
+         <section className='bg-white relative overflow-hidden min-h-[95vh]'>
+           <Image src={Product3D} width={5000} height={5000} quality={100} alt='' className='absolute left-0 top-0 w-full h-full object-cover'/>
+    
          </section>
 
          <section className='bg-white'>
