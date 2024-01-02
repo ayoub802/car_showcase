@@ -19,7 +19,7 @@ export const Footer = () => {
             <div className="mb-10 gap-y-8 row">
                 <div className="col-md-3">
                     <Image width={100} height={100} quality={100} src={Logo} className='w-[150px] h-[35px] mb-2 mx-auto md:!mx-0' alt="" />
-                    <p className="text__16 text-[#D4D4D4] mb-4 text-center md:!text-left">Revêtements céramiques pour voitures, avions, bâteaux, vitrages</p>
+                    <p className="text__16 text-[#D4D4D4] mb-4 text-center md:!text-left">{t('Revêtements céramiques pour voitures, avions, bâteaux, vitrages')}</p>
                     <div className="flex items-center gap-3 justify-center md:justify-normal">
                         <a href="#!" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
                         <Facebook
@@ -49,7 +49,7 @@ export const Footer = () => {
                     <div className="flex flex-wrap gap-3 font-medium text__16">
                         <a className="inline-block w-full text-Mwhite uppercase" href="/">{t("Accueil")}</a>
                         <a className="inline-block w-full text-Mwhite uppercase" href="/Automobile">{t("Automobile")}</a>
-                        <a className="inline-block w-full text-Mwhite uppercase" href="/Aeronautique">{t("AÉRONAUTOQUE")}</a>
+                        <a className="inline-block w-full text-Mwhite uppercase" href="/Aeronautique">{t("Aéronautique")}</a>
                         <a className="inline-block w-full text-Mwhite uppercase" href="/Marine">MARINE</a>
                     </div>
                 </div>

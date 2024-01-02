@@ -118,7 +118,7 @@ export const Hero = () => {
             </div>
          </section>
 
-         <section className='bg-white relative overflow-hidden min-h-[95vh]'>
+         <section className='bg-[#fff] relative overflow-hidden min-h-[95vh]'>
            <Image src={Product3D} width={5000} height={5000} quality={100} alt='' className='absolute left-0 top-0 w-full h-full object-cover'/>
     
          </section>
