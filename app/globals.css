@@ -107,3 +107,17 @@ body,
 .bg-background\/80{
   background-color: hsl(222.2 84% 4.9% / 0.8)!important;
 }
+
+.text_outline{
+  color: white;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: white;
+}
+
+.text_outline-span{
+  color: black !important;
+   -webkit-text-fill-color: black;
+  /* -webkit-text-stroke-width: 1px;*/
+  -webkit-text-stroke-color: white;  
+}

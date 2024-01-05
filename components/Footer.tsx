@@ -44,7 +44,7 @@ export const Footer = () => {
 
                     </div>
                 </div>
-                <div className="col-12 col-md-3 col-sm-6 offset-md-1 text-center md:!text-left">
+                <div className="col-12 col-md-2 col-sm-6 offset-md-1 text-center md:!text-left">
                     <h5 className="font-medium text-[#A3A3A3] text__16 mb-3">NAVIGATION</h5>
                     <div className="flex flex-wrap gap-3 font-medium text__16">
                         <a className="inline-block w-full text-Mwhite uppercase" href="/">{t("Accueil")}</a>
@@ -62,10 +62,12 @@ export const Footer = () => {
                         <a className="inline-block w-full text-Mwhite uppercase" href="/Contact">Contact</a>
                     </div>
                 </div>
-                <div className="col-12 col-md-2 col-sm-6 text-center md:!text-left">
+                <div className="col-12 col-md-3 col-sm-6 text-center md:!text-left">
                     <h5 className="font-medium text-[#A3A3A3] text__16 mb-3">INFORMATIONS</h5>
                     <div className="flex flex-wrap gap-3 font-medium text__16">
-                        <a className="inline-block w-full text-Mwhite">42 Rue Georges Besse, 30000 Nîmes, France</a>
+                        <a className="inline-block w-full text-Mwhite">Morocco —
+                        Bd Mohamed Jamal Addorra, Imm BR1B, N3 2eme etage, Lot Al Hamd Ain Sebaa
+                        Casablanca, 20250</a>
                         <a className="inline-block w-full text-Mwhite">info@fusiocoat.ma</a>
                     </div>
                 </div>

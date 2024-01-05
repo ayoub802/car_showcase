@@ -28,7 +28,7 @@ import Gellery10 from "../public/pic6.webp"
 import Gellery11 from "../public/pic7.webp"
 import Gellery12 from "../public/pic8.webp"
 import Carsction from "../public/Fusio coat.png"
-import Product3D from "../public/product3d_1.webp"
+import Product3D from "../public/Untitled design (44).png"
 import Pattern from "../public/patern.svg"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { useTranslation } from 'react-i18next';
@@ -37,6 +37,7 @@ import { Testimonial } from '@components/Testimonial';
 import { FAQ } from '@components/FAQ';
 import { ProductForm } from '@components/ProductForm';
 import  ProductCard  from '@/components/ProductCard';
+import Link from 'next/link';
 
 export const Hero = () => {
 
@@ -53,8 +54,8 @@ export const Hero = () => {
               <div className="row">
                   <div className="col-md-8 col-8">
                       <p className="text__18 text-Mgreen mb-2">FUSIOCOAT</p>
-                      <h1 className="font-semibold text__48 text-Mwhite mb-2">{t('La solution ultime pour une protection maximale')}<br className="hidden xl:block" />{t('et une esthétique renouvelée de votre voiture.')}</h1>
-                      <p className="text__18 text-[#A3A3A3] mb-2">{t("Fusiocoat - l'innovation qui offre une protection exceptionnelle et")} 
+                      <h1 className="font-semibold text__48 text-Mwhite mb-2">{t('La solution ultime pour une protection maximale')}<br className="hidden xl:block" /> {t('et une esthétique renouvelée de votre voiture.')}</h1>
+                      <p className="text__18 text-[#A3A3A3] mb-2">{t("Fusiocoat - l'innovation qui offre une protection exceptionnel le et")} 
                       <br className="hidden xl:block" /> {t("une esthétique rafraîchie pour vos véhicules, qu'ils voguent sur l'eau,")}
                       <br className="hidden xl:block" /> {t("volent dans le ciel ou roulent sur la route.")}
                       </p>
@@ -118,8 +119,24 @@ export const Hero = () => {
             </div>
          </section>
 
-         <section className='bg-[#fff] relative overflow-hidden min-h-[95vh]'>
+         <section className='bg-[#fff] relative overflow-hidden min-h-[70vh]'>
            <Image src={Product3D} width={5000} height={5000} quality={100} alt='' className='absolute left-0 top-0 w-full h-full object-cover'/>
+           {/* <div className="absolute inset-0 w-full h-full bg-[#00000080]"></div> */}
+           {/* <div className="absolute flex justify-center items-center z-10 w-full top-44 left-0">
+                <div className='flex flex-col items-center text-center'>
+                    <h2 className='uppercase text-[35px] font-semibold text_outline'>Fusiocoat is your new <span className='text_outline-span py-2 px-3 bg-Mgreen text-[#000] rounded-full'>Solution</span> </h2>
+                    <p className='text-[#fff] max-w-[90ch] mt-3 font-[400]'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam odio voluptatem eum hic, ad quod eveniet dolorum error facilis ut quia sapiente ex, vero distinctio commodi, illo repudiandae ipsa.
+                    </p>
+                </div>
+           </div>
+
+           <div className="absolute h-screen w-full z-10 bottom-8 flex justify-center items-end">
+            <div className="flex gap-[150px]">
+                <Link href={"/Boutique"} className='py-2 px-3.5 uppercase font-semibold rounded-full bg-Mgreen text-[#000]'>voir le produit</Link>
+                <Link href={"/Boutique"} className='py-2 px-3.5 uppercase font-semibold rounded-full border border-Mgreen text-Mgreen'>voir boutique</Link>
+            </div>
+           </div> */}
     
          </section>
 
