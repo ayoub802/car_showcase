@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import Deco from "../public/deco pic.webp"
+import test1 from "../public/test1.webp"
+import test2 from "../public/test2.webp"
+import test3 from "../public/test3.webp"
+import test4 from "../public/test4.webp"
 import Stars from "../public/iconmonstr-star-filled.png"
 // Import Swiper styles
 import "swiper/css";
@@ -29,7 +32,7 @@ export const Testimonial = () => {
                         <div>
                             <div className="grid md:grid-cols-2 items-center gap-10">
                                 <div className='relative'>
-                                   <Image alt='' src={Deco} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
+                                   <Image alt='' src={test1} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
                                    <div className="absolute top-4 -right-4 h-3 w-20 bg-Mgreen"></div>
                                 </div>
                                 <div>
@@ -55,7 +58,7 @@ export const Testimonial = () => {
                         <div>
                             <div className="grid md:grid-cols-2 items-center gap-10">
                                 <div className='relative'>
-                                   <Image alt='' src={Deco} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
+                                   <Image alt='' src={test2} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
                                    <div className="absolute top-4 -right-4 h-3 w-20 bg-Mgreen"></div>
                                 </div>
                                 <div>
@@ -80,7 +83,7 @@ export const Testimonial = () => {
                         <div>
                             <div className="grid md:grid-cols-2 items-center gap-10">
                                 <div className='relative'>
-                                   <Image alt='' src={Deco} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
+                                   <Image alt='' src={test3} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
                                    <div className="absolute top-4 -right-4 h-3 w-20 bg-Mgreen"></div>
                                 </div>
                                 <div>
@@ -105,7 +108,7 @@ export const Testimonial = () => {
                         <div>
                             <div className="grid md:grid-cols-2 items-center gap-10">
                                 <div className='relative'>
-                                   <Image alt='' src={Deco} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
+                                   <Image alt='' src={test4} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
                                    <div className="absolute top-4 -right-4 h-3 w-20 bg-Mgreen"></div>
                                 </div>
                                 <div>
