@@ -32,7 +32,7 @@ export const Testimonial = () => {
                         <div>
                             <div className="grid md:grid-cols-2 items-center gap-10">
                                 <div className='relative'>
-                                   <Image alt='' src={test1} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
+                                   <Image alt='' src={test3} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
                                    <div className="absolute top-4 -right-4 h-3 w-20 bg-Mgreen"></div>
                                 </div>
                                 <div>
@@ -58,7 +58,7 @@ export const Testimonial = () => {
                         <div>
                             <div className="grid md:grid-cols-2 items-center gap-10">
                                 <div className='relative'>
-                                   <Image alt='' src={test2} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
+                                   <Image alt='' src={test1} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
                                    <div className="absolute top-4 -right-4 h-3 w-20 bg-Mgreen"></div>
                                 </div>
                                 <div>
@@ -83,7 +83,7 @@ export const Testimonial = () => {
                         <div>
                             <div className="grid md:grid-cols-2 items-center gap-10">
                                 <div className='relative'>
-                                   <Image alt='' src={test3} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
+                                   <Image alt='' src={test2} width={500} height={500} quality={100} className='md:w-[350px] w-full object-cover h-[450px] rounded-sm'/>
                                    <div className="absolute top-4 -right-4 h-3 w-20 bg-Mgreen"></div>
                                 </div>
                                 <div>
