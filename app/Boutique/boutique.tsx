@@ -15,6 +15,7 @@ import { sortBy } from 'sort-by-typescript';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Loader } from '@/components/ui/loader'
 import { useTranslation } from 'react-i18next'
+import { Button } from '@components/ui/button'
 
 
 export default function BoutiqueCom() {
@@ -34,6 +35,8 @@ export default function BoutiqueCom() {
       const router = useRouter();
       const [sortByFilter, setSortByFilter] = useState<any>([]);
       const [sotredProduct, setStoredProduct] = useState<any>([])
+      const [itemsToShow, setItemsToShow] = useState<number>(6);
+
       const handleClick = (data: any) => {
         router.push(`/product/${data?.id}`);
       };
@@ -62,7 +65,7 @@ export default function BoutiqueCom() {
         fetchCategories()
       }, [])
 
-      
+
       const handleChange = (e: any) => {
         setSortByFilter(e);
          const tempArray = products;
@@ -116,7 +119,7 @@ export default function BoutiqueCom() {
                       :
                         <div className="grid grid-cols md:grid-cols-3 sm:grid-cols-2  max-w-[1224px] mx-auto gap-4">
                           {
-                            products.slice(0,6).map((item: any, index: any) => (
+                            products.slice(0, itemsToShow).map((item: any, index: any) => (
                               <article key={index} className="relative flex flex-col items-center overflow-hidden">
                                     <div className="w-[400px] h-auto ">
                                         <Image src={item.images?.[0]?.url} onClick={() => onPreview(item)} className='w-[400px] h-[400px] object-cover cursor-pointer' width={500} height={500} quality={100} alt=""/>
@@ -133,8 +136,17 @@ export default function BoutiqueCom() {
 
                          </div>
                         }
+                     
+                     {
+                      products?.length == 0
 
-
+                      ?
+                      <div></div>
+                      :
+                  <Button onClick={() => setItemsToShow(itemsToShow + 6)} className="mt-6 max-w-max mx-auto cursor-pointer font-medium text__16 text-Mwhite !rounded-[24px] !border-Mblue bg-Mblue btnClass justify-center !flex uppercase hover:text-[#1e19d8]" type="submit">
+                    {t('Voir Plus')}
+                    </Button>
+                     }
 
                 </div>
             </div>

@@ -58,7 +58,7 @@ const ProductSimlair =  ({ product }) => {
                 src={item.images?.[0]?.url} 
                 alt="" 
                 fill
-                className="aspect-square object-cover  rounded-md "
+                className="aspect-square object-cover  rounded-md !z-0"
             />
             <div className="opacity-0 z-10 gouphover  transition absolute w-full px-6 bottom-5">
                 <div className="flex gap-x-6 justify-center">

@@ -10,9 +10,12 @@ interface OrderClientProps {
   data: OrderColumn[];
 }
 
+
+
 export const OrderClient: React.FC<OrderClientProps> = ({
   data
 }) => {
+  console.log("The Data is =>", data);
   return (
     <>
       <Heading title={`Orders (${data.length})`} description="Manage orders for your store" />

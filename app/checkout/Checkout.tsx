@@ -13,6 +13,8 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import "../App.css"
+import PreviewModalcheckout from "@components/preview_checkout";
+import usePreviewModalCheckout from "@hooks/use-preview-checkout";
 const Summary = () => {
   const items = useCart((state) => state.items);
   const removeAll = useCart((state) => state.removeAll);
@@ -20,7 +22,7 @@ const Summary = () => {
   const { incrementQuantity, decrementQuantity } = useCart();
   const [loading, setLoading] = useState(false);
 
-
+  const previewModal = usePreviewModalCheckout();
   const totalPrice = items.reduce((total: any, item: any) => {
     return total + (Number(item.price) * item.quantity)
   }, 0);
@@ -36,6 +38,10 @@ const Summary = () => {
       
     })
   },[]) 
+
+  const onPreview = () => {
+    previewModal.onOpen();
+  };
 
   const onCheckout = async () => {
     try{
@@ -127,12 +133,12 @@ const Summary = () => {
                     <Currency value={totalPrice} />
                             </div>
                 </div>
-                <Button onClick={onCheckout} disabled={items.length === 0} className="w-full bg-[#000] text-[#fff] hover:text-[#000] mt-6">
+                <Button  onClick={() => onPreview()} disabled={items.length === 0} className="w-full bg-[#000] text-[#fff] hover:text-[#000] mt-6">
                     Checkout
                 </Button>
                 </div>
             </div>
-            </div>
+            </div> 
         </div>
       </section>
 

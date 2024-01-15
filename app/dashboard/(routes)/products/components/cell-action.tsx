@@ -41,6 +41,8 @@ export const CellAction: React.FC<CellActionProps> = ({
       router.refresh();
     } catch (error) {
       toast.error('Something went wrong');
+      console.log("The Error of Product is", error);
+      
     } finally {
       setLoading(false);
       setOpen(false);

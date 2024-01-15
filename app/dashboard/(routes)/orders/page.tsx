@@ -19,12 +19,19 @@ const OrdersPage = async () => {
     orderBy: {
       createdAt: 'desc'
     }
-  });
+
+    
+  }
+  );
+  
+
 
   const formattedOrders: OrderColumn[] = orders.map((item, index) => ({
     id: item.id,
     phone: item.phone,
+    nomComplet: item.nomComplet,
     address: item.address,
+    ville: item.ville,
     products: item.orderItems.map((orderItem) => orderItem.product.name).join(` , ${"\n"}`),
     totalPrice: formatter.format(item.orderItems.reduce((total, obj) => {
       return total + (Number(obj.product.price) * item.quantity)
@@ -35,6 +42,7 @@ const OrdersPage = async () => {
 
   return (
     <div className="flex-col">
+
       <div className="flex-1 space-y-4 p-8 pt-6">
         <OrderClient data={formattedOrders} />
       </div>

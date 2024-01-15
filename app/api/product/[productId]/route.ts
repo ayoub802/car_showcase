@@ -12,7 +12,8 @@ export async function DELETE(
 
       try {
 
-        
+        console.log('Received delete request for product with ID:', params.productId);
+
         if (!params.productId) {
           return new NextResponse("Product id is required", { status: 400 });
         }
@@ -24,19 +25,34 @@ export async function DELETE(
         const product= await prismadb.product.delete({
           where: {
             id: productId,
-          }
+          },
+          include: {
+            orderItems: {
+              include: {
+                order: true,
+              },
+            }, // Include associated orderItems
+          },
         });
-
         // const product = await prismadb.product.delete({
         //   where: {
         //     id: params.id
         //   },
         // });
+        for (const orderItem of product.orderItems) {
+          await prismadb.orderItem.deleteMany({
+            where: {
+              productId: productId,
+            },
+          });
+        }
+            // Now, delete the associated order
+
       
         return NextResponse.json(product);
       } catch (error) {
         console.error('Error deleting user:', error);
-        return new NextResponse("Internal error", { status: 500 });
+        return new NextResponse("Internal error", { status: 500});
       }
     };
 export async function GET(

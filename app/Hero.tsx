@@ -16,9 +16,9 @@ import Product2 from "../public/FC Smart.png"
 import Product3 from "../public/FC Boost.png"
 import { Button } from '@/components/Button';
 import Gellery1 from "../public/zit pic.png"
-import Gellery2 from "../public/deco pic.webp"
+import Gellery2 from "../public/Fusiocoat2.webp"
 import Gellery3 from "../public/gel pic.png"
-import Gellery4 from "../public/deco pic (1).webp"
+import Gellery4 from "../public/Fusiocoat1.webp"
 import Gellery5 from "../public/Pic1.png"
 import Gellery6 from "../public/pic2.png"
 import Gellery7 from "../public/pic3.png"
@@ -40,6 +40,11 @@ import  ProductCard  from '@/components/ProductCard';
 import Link from 'next/link';
 
 export const Hero = () => {
+    const [hoverStates, setHoverStates] = useState(false);
+    const [hoverStates1, setHoverStates1] = useState(false);
+    const [hoverStates2, setHoverStates2] = useState(false);
+    const [hoverStates3, setHoverStates3] = useState(false);
+
 
     const {t}  = useTranslation("global")
   return (
@@ -144,8 +149,11 @@ export const Hero = () => {
            <div className="container">
             <div className="relative">
                <Image src={Carsction} width={1500} height={1500} quality={100} alt='' className='lg:w-[60rem] md:w-[40rem] md:h-[20rem] w-[30rem] h-[13rem] -rotate-90 md:rotate-0 mx-auto lg:h-[30rem]' />
-               <HoverCard>
-                <HoverCardTrigger asChild>
+               <HoverCard open={hoverStates} onOpenChange={(open) => setHoverStates(open)}>
+                <HoverCardTrigger asChild
+                       onMouseEnter={() => setHoverStates(true)}
+                       onTouchStart={() => setHoverStates(true)}
+                >
                     <div className='absolute top-[50%] md:left-[20%] left-[33%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
                         
                     </div>
@@ -163,8 +171,11 @@ export const Hero = () => {
                 </HoverCardContent>
                 </HoverCard>
 
-                <HoverCard>
-                <HoverCardTrigger asChild>
+                <HoverCard open={hoverStates1} onOpenChange={(open) => setHoverStates1(open)}>
+                <HoverCardTrigger asChild
+                       onMouseEnter={() => setHoverStates1(true)}
+                       onTouchStart={() => setHoverStates1(true)}
+                >
                     <div className='absolute md:top-[20%] top-[105%] left-[50%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
                         
                     </div>
@@ -182,8 +193,12 @@ export const Hero = () => {
                 </HoverCardContent>
                 </HoverCard>
 
-                <HoverCard>
-                <HoverCardTrigger asChild>
+                <HoverCard open={hoverStates2} onOpenChange={(open) => setHoverStates2(open)}>
+                <HoverCardTrigger 
+                asChild
+                onMouseEnter={() => setHoverStates2(true)}
+                onTouchStart={() => setHoverStates2(true)}
+                >
                     <div className='absolute md:top-[30%] -top-[27%] left-[45%] md:left-[80%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
                         
                     </div>
@@ -201,8 +216,12 @@ export const Hero = () => {
                 </HoverCardContent>
                 </HoverCard>
 
-                <HoverCard>
-                    <HoverCardTrigger asChild>
+                <HoverCard open={hoverStates3} onOpenChange={(open) => setHoverStates3(open)}>
+                    <HoverCardTrigger 
+                    asChild
+                    onMouseEnter={() => setHoverStates3(true)}
+                    onTouchStart={() => setHoverStates3(true)}
+                    >
                         <div className='absolute md:top-[78%] -top-[11%] left-[65%] md:left-[80%] md:w-5 md:h-5 w-3 h-3  pulse rounded-full bg-[#fff] cursor-pointer'>
                             
                         </div>

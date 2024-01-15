@@ -12,6 +12,7 @@ import { ToastProvider } from '@/providers/toast-provider'
 import { PreviewModalProvider } from '@/providers/preview-modal-provider'
 import { ClerkProvider } from "@clerk/nextjs";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { PreviewModalCheckoutProvider } from "@providers/checkout-modal-provider";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ToastProvider />
             <ModalProvider />
             <PreviewModalProvider />
+            <PreviewModalCheckoutProvider />
             {children}
             </ThemeProvider>
             <SpeedInsights />

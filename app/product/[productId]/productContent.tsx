@@ -36,10 +36,10 @@ const ProductContent = ({
 
                 </ol>
         </nav>
-                <div className="px-4 py-10 sm:px-6 lg:px-8">
+                <div className="px-0 md:px-4 py-10 sm:px-6 lg:px-8">
                 <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     <Gallery images={product.images} />
-                    <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+                    <div className="mt-10 px-0 md:px-4 sm:mt-16 sm:px-0 lg:mt-0">
                         <div className='flex gap-3 items-center mb-2'>
                             <h3><Currency value={product.price}/></h3>
                             <h3>-</h3>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { Fragment, useState } from 'react'
-import Logo from "../public/Morocco.png"
+import Logo from "../public/fusioLogo.svg"
 import Eng from "../public/english.png"
 import fr from "../public/french.png"
 import { ArrowDown2, Bag2, CloseCircle, Trash } from 'iconsax-react';
@@ -168,7 +168,7 @@ export const Header = () => {
 
                         <Link href='/' className='lg:block hidden'>
                             {
-                                <Image src={Logo} className='md:w-[150px] md:h-[35px] w-[120px] h-[30px]' alt="" />
+                                <Image src={Logo} className='md:w-[150px] md:h-[50px] w-[120px] h-[45px]' alt="" />
                             }
 
                         </Link>
@@ -384,9 +384,9 @@ export const Header = () => {
                             <HeaderMobile />
                              <div>
                              </div>
-                                <Link href='/' className=''>
+                                <Link href='/' className='ml-9 md:ml-4'>
                                     {
-                                        <Image src={Logo} className='md:w-[150px] md:h-[35px] w-[120px] h-[30px]' alt="" />
+                                        <Image src={Logo} className='md:w-[150px] md:h-[50px] w-[120px] h-[45px]' alt="" />
                                     }
 
                                 </Link>

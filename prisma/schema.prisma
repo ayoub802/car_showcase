@@ -46,8 +46,11 @@ model Order {
   isPaid     Boolean   @default(false)
   quantity   Int    @default(0)
   volume     Int    @default(30)
-  phone      String    @default("")
-  address    String    @default("")
+  phone      String   
+  address    String   
+  nomComplet String  
+  ville      String  
+  email      String  
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 }
@@ -58,7 +61,7 @@ model OrderItem {
   orderId   String  // Foreign Key to Order
   order     Order   @relation(fields: [orderId], references: [id])
   productId String  // Foreign Key to Product
-  product   Product @relation(fields: [productId], references: [id])
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   @@index([orderId])
   @@index([productId])
