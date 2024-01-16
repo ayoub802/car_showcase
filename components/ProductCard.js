@@ -62,7 +62,7 @@ const ProductCard = () => {
 
                             products.slice(0, 6).map((item, index) => (
                               <div key={index} className="bg-white group cursor-pointer rounded-xl border border-gray-300 p-3 space-y-4">
-                              <div className="aspect-square rounded-xl imgProduct bg-gray-100 relative">
+                              <div className="aspect-square rounded-xl imgProduct bg-gray-100 relative overflow-hidden">
                                 <Image 
                                   onClick={() => handleClick(item)}
                                   src={item.images?.[0]?.url} 

@@ -56,155 +56,88 @@ export const Hero = () => {
 
     gsap.registerPlugin(ScrollTrigger);
     useEffect(() => {
-        const product3DSection = product3DSectionRef.current;
-        const product3DSection1 = product3DSectionRef1.current;
-        const product3DSection2 = product3DSectionRef2.current;
-        const product3DSection3 = product3DSectionRef3.current;
-        const product3DSection4 = product3DSectionRef4.current;
-      
-        if (product3DSection) {
-          gsap.from(product3DSection, {
-            opacity: 0,
-            y: 100,
-            duration: 1,
-            ease: 'power2.out', // Add an easing function for a more natural bounce effect
-            scrollTrigger: {
-              trigger: product3DSection,
-              start: 'top 80%',
-              end: 'bottom 80%',
-              toggleActions: 'play none none reverse',
-              onEnter: () => {
-                gsap.to(product3DSection, {
-                  y: 20, // Move down by 20 pixels
-                  duration: 0.5,
-                  ease: 'power2.out',
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(product3DSection, {
-                  y: 0, // Return to the original position
-                  duration: 0.5,
-                  ease: 'power2.out',
-                });
-              },
+      const product3DSection = product3DSectionRef.current;
+      const product3DSection1 = product3DSectionRef1.current;
+      const product3DSection2 = product3DSectionRef2.current;
+      const product3DSection3 = product3DSectionRef3.current;
+      const product3DSection4 = product3DSectionRef4.current;
+    
+        gsap.from(product3DSection, {
+          opacity: 0,
+          y: 100,
+          duration: 1,
+          ease: 'power2.out', // Add an easing function for a more natural bounce effect
+          scrollTrigger: {
+            trigger: product3DSection,
+            start: 'top 80%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none reverse',
+            onEnter: () => {
+              gsap.to(product3DSection, {
+                y: 20, // Move down by 20 pixels
+                duration: .5,
+                ease: 'power2.out',
+              });
             },
-          });
-        }
+            onEnterBack: () => {
+              gsap.to(product3DSection, {
+                y: 0, // Return to the original position
+                duration: .5,
+                ease: 'power2.out',
+              });
+            },
+          },
+        });
 
-        if (product3DSection1) {
-          gsap.from(product3DSection1, {
-            opacity: 0,
-            y: 100,
-            duration: 1.5,
-            ease: 'power2.out', // Add an easing function for a more natural bounce effect
-            scrollTrigger: {
-              trigger: product3DSection1,
-              start: 'top 80%',
-              end: 'bottom 80%',
-              toggleActions: 'play none none reverse',
-              onEnter: () => {
-                gsap.to(product3DSection1, {
-                  y: 20, // Move down by 20 pixels
-                  duration: 0.75,
-                  ease: 'power2.out',
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(product3DSection1, {
-                  y: 0, // Return to the original position
-                  duration: 0.75,
-                  ease: 'power2.out',
-                });
-              },
-            },
-          });
-        }
-
-        if (product3DSection2) {
-          gsap.from(product3DSection2, {
-            opacity: 0,
-            y: 100,
-            duration: 1,
-            ease: 'power2.out', // Add an easing function for a more natural bounce effect
-            scrollTrigger: {
-              trigger: product3DSection2,
-              start: 'top 80%',
-              end: 'bottom 80%',
-              toggleActions: 'play none none reverse',
-              onEnter: () => {
-                gsap.to(product3DSection2, {
-                  y: 20, // Move down by 20 pixels
-                  duration: 0.5,
-                  ease: 'power2.out',
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(product3DSection2, {
-                  y: 0, // Return to the original position
-                  duration: 0.5,
-                  ease: 'power2.out',
-                });
-              },
-            },
-          });
-        }
-        if (product3DSection3) {
-          gsap.from(product3DSection3, {
-            opacity: 0,
-            y: 100, 
-            duration: 2,
-            ease: 'power2.out', // Add an easing function for a more natural bounce effect
-            scrollTrigger: {
-              trigger: product3DSection3,
-              start: 'top 80%',
-              end: 'bottom 80%',
-              toggleActions: 'play none none reverse',
-              onEnter: () => {
-                gsap.to(product3DSection3, {
-                  y: 20, // Move down by 20 pixels
-                  duration: 1,
-                  ease: 'power2.out',
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(product3DSection, {
-                  y: 0, // Return to the original position
-                  duration: 1,
-                  ease: 'power2.out',
-                });
-              },
-            },
-          });
-        }
-        if (product3DSection4) {
-          gsap.from(product3DSection4, {
-            opacity: 0,
-            y: 100,
-            duration: 1.8,
-            ease: 'power2.out', // Add an easing function for a more natural bounce effect
-            scrollTrigger: {
-              trigger: product3DSection4,
-              start: 'top 80%',
-              end: 'bottom 80%',
-              toggleActions: 'play none none reverse',
-              onEnter: () => {
-                gsap.to(product3DSection4, {
-                  y: 20, // Move down by 20 pixels
-                  duration: 0.9,
-                  ease: 'power2.out',
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(product3DSection4, {
-                  y: 0, // Return to the original position
-                  duration: 0.9,
-                  ease: 'power2.out',
-                });
-              },
-            },
-          });
-        }
-      }, []);
+        gsap.from('.moistrizing-element', {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.moistrizing-element',
+            start: 'top 80%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+        gsap.from('.moistrizing-element3', {
+          opacity: 0,
+          y: 50,
+          duration: 1.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.moistrizing-element3',
+            start: 'top 80%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+        gsap.from('.moistrizing-element2', {
+          opacity: 0,
+          y: 50,
+          duration: 2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.moistrizing-element2',
+            start: 'top 80%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+        gsap.from('.moistrizing-element4', {
+          opacity: 0,
+          y: 50,
+          duration: 2.2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.moistrizing-element2',
+            start: 'top 80%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+    }, []);
 
     const {t}  = useTranslation("global")
   return (
@@ -291,23 +224,26 @@ export const Hero = () => {
                  <Image src={Product3D}  width={5000} height={5000} quality={100} alt='' className='w-[70%] h-[500px] object-cover relative z-10' />
               </div>
             {/* </div> */}
-
-            <div ref={product3DSectionRef1} className='w-20 h-28 flex flex-col justify-center items-center absolute top-24 left-[30%]'>
+            <div className='w-20 h-28 flex flex-col justify-center items-center absolute top-24 left-[30%] moistrizing-element'>
+                <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
+               <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
+            </div> 
+            <div className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[30%] moistrizing-element2'>
                 <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
                <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
             </div>
-            <div ref={product3DSectionRef2} className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[30%]'>
+            <div className='w-20 h-28 flex flex-col justify-center items-center absolute top-24 left-[60%] moistrizing-element3'>
                 <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
                <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
             </div>
-            <div ref={product3DSectionRef3} className='w-20 h-28 flex flex-col justify-center items-center absolute top-24 left-[60%]'>
+            <div className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[60%] moistrizing-element4'>
                 <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
                <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
             </div>
-            <div ref={product3DSectionRef4} className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[60%]'>
+            {/* <div className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[60%]'>
                 <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
                <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
-            </div>
+            </div> */}
 
            {/* <div className="absolute inset-0 w-full h-full bg-[#00000080]"></div> */}
            {/* <div className="absolute flex justify-center items-center z-10 w-full top-44 left-0">
@@ -501,3 +437,4 @@ export const Hero = () => {
     </div>
   )
 }
+
