@@ -121,3 +121,14 @@ body,
   /* -webkit-text-stroke-width: 1px;*/
   -webkit-text-stroke-color: white;  
 }
+
+.image-container {
+  transition: transform 0.3s ease; /* Adjust the duration and easing as needed */
+}
+
+/* .bg_withImage{
+  background-image: url('../public/pdct\ background.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} */

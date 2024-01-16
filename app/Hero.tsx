@@ -2,7 +2,7 @@
 
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import React from 'react'
+import React, { useRef } from 'react'
 import { useEffect, useState } from 'react';
 import HeroBanner from "../public/Fusiocoat banner.svg"
 import Image from 'next/image';
@@ -28,7 +28,8 @@ import Gellery10 from "../public/pic6.webp"
 import Gellery11 from "../public/pic7.webp"
 import Gellery12 from "../public/pic8.webp"
 import Carsction from "../public/Fusio coat.png"
-import Product3D from "../public/Untitled design (44).png"
+import BackgroundImage from "../public/pdct background.png"
+import Product3D from "../public/product_banner.png"
 import Pattern from "../public/patern.svg"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import { useTranslation } from 'react-i18next';
@@ -38,13 +39,172 @@ import { FAQ } from '@components/FAQ';
 import { ProductForm } from '@components/ProductForm';
 import  ProductCard  from '@/components/ProductCard';
 import Link from 'next/link';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { url } from 'inspector';
 
 export const Hero = () => {
     const [hoverStates, setHoverStates] = useState(false);
     const [hoverStates1, setHoverStates1] = useState(false);
     const [hoverStates2, setHoverStates2] = useState(false);
     const [hoverStates3, setHoverStates3] = useState(false);
+    const product3DSectionRef = useRef(null);
+    const product3DSectionRef1 = useRef(null);
+    const product3DSectionRef2 = useRef(null);
+    const product3DSectionRef3 = useRef(null);
+    const product3DSectionRef4 = useRef(null);
 
+    gsap.registerPlugin(ScrollTrigger);
+    useEffect(() => {
+        const product3DSection = product3DSectionRef.current;
+        const product3DSection1 = product3DSectionRef1.current;
+        const product3DSection2 = product3DSectionRef2.current;
+        const product3DSection3 = product3DSectionRef3.current;
+        const product3DSection4 = product3DSectionRef4.current;
+      
+        if (product3DSection) {
+          gsap.from(product3DSection, {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: 'power2.out', // Add an easing function for a more natural bounce effect
+            scrollTrigger: {
+              trigger: product3DSection,
+              start: 'top 80%',
+              end: 'bottom 80%',
+              toggleActions: 'play none none reverse',
+              onEnter: () => {
+                gsap.to(product3DSection, {
+                  y: 20, // Move down by 20 pixels
+                  duration: 0.5,
+                  ease: 'power2.out',
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(product3DSection, {
+                  y: 0, // Return to the original position
+                  duration: 0.5,
+                  ease: 'power2.out',
+                });
+              },
+            },
+          });
+        }
+
+        if (product3DSection1) {
+          gsap.from(product3DSection1, {
+            opacity: 0,
+            y: 100,
+            duration: 1.5,
+            ease: 'power2.out', // Add an easing function for a more natural bounce effect
+            scrollTrigger: {
+              trigger: product3DSection1,
+              start: 'top 80%',
+              end: 'bottom 80%',
+              toggleActions: 'play none none reverse',
+              onEnter: () => {
+                gsap.to(product3DSection1, {
+                  y: 20, // Move down by 20 pixels
+                  duration: 0.75,
+                  ease: 'power2.out',
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(product3DSection1, {
+                  y: 0, // Return to the original position
+                  duration: 0.75,
+                  ease: 'power2.out',
+                });
+              },
+            },
+          });
+        }
+
+        if (product3DSection2) {
+          gsap.from(product3DSection2, {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: 'power2.out', // Add an easing function for a more natural bounce effect
+            scrollTrigger: {
+              trigger: product3DSection2,
+              start: 'top 80%',
+              end: 'bottom 80%',
+              toggleActions: 'play none none reverse',
+              onEnter: () => {
+                gsap.to(product3DSection2, {
+                  y: 20, // Move down by 20 pixels
+                  duration: 0.5,
+                  ease: 'power2.out',
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(product3DSection2, {
+                  y: 0, // Return to the original position
+                  duration: 0.5,
+                  ease: 'power2.out',
+                });
+              },
+            },
+          });
+        }
+        if (product3DSection3) {
+          gsap.from(product3DSection3, {
+            opacity: 0,
+            y: 100, 
+            duration: 2,
+            ease: 'power2.out', // Add an easing function for a more natural bounce effect
+            scrollTrigger: {
+              trigger: product3DSection3,
+              start: 'top 80%',
+              end: 'bottom 80%',
+              toggleActions: 'play none none reverse',
+              onEnter: () => {
+                gsap.to(product3DSection3, {
+                  y: 20, // Move down by 20 pixels
+                  duration: 1,
+                  ease: 'power2.out',
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(product3DSection, {
+                  y: 0, // Return to the original position
+                  duration: 1,
+                  ease: 'power2.out',
+                });
+              },
+            },
+          });
+        }
+        if (product3DSection4) {
+          gsap.from(product3DSection4, {
+            opacity: 0,
+            y: 100,
+            duration: 1.8,
+            ease: 'power2.out', // Add an easing function for a more natural bounce effect
+            scrollTrigger: {
+              trigger: product3DSection4,
+              start: 'top 80%',
+              end: 'bottom 80%',
+              toggleActions: 'play none none reverse',
+              onEnter: () => {
+                gsap.to(product3DSection4, {
+                  y: 20, // Move down by 20 pixels
+                  duration: 0.9,
+                  ease: 'power2.out',
+                });
+              },
+              onEnterBack: () => {
+                gsap.to(product3DSection4, {
+                  y: 0, // Return to the original position
+                  duration: 0.9,
+                  ease: 'power2.out',
+                });
+              },
+            },
+          });
+        }
+      }, []);
 
     const {t}  = useTranslation("global")
   return (
@@ -124,8 +284,31 @@ export const Hero = () => {
             </div>
          </section>
 
-         <section className='bg-[#fff] relative overflow-hidden min-h-[70vh]'>
-           <Image src={Product3D} width={5000} height={5000} quality={100} alt='' className='absolute left-0 top-0 w-full h-full object-cover'/>
+         <section className='relative overflow-hidden min-h-[60vh] h-[60vh] grid place-content-center bg_withImage'>
+            {/* <div ref={product3DSectionRef}> */}
+              <Image src={BackgroundImage} width={5000} height={5000} quality={100} alt='' className='absolute top-0 left-0  w-full h-full' />
+              <div ref={product3DSectionRef}>
+                 <Image src={Product3D}  width={5000} height={5000} quality={100} alt='' className='w-[70%] h-[500px] object-cover relative z-10' />
+              </div>
+            {/* </div> */}
+
+            <div ref={product3DSectionRef1} className='w-20 h-28 flex flex-col justify-center items-center absolute top-24 left-[30%]'>
+                <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
+               <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
+            </div>
+            <div ref={product3DSectionRef2} className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[30%]'>
+                <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
+               <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
+            </div>
+            <div ref={product3DSectionRef3} className='w-20 h-28 flex flex-col justify-center items-center absolute top-24 left-[60%]'>
+                <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
+               <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
+            </div>
+            <div ref={product3DSectionRef4} className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[60%]'>
+                <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
+               <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
+            </div>
+
            {/* <div className="absolute inset-0 w-full h-full bg-[#00000080]"></div> */}
            {/* <div className="absolute flex justify-center items-center z-10 w-full top-44 left-0">
                 <div className='flex flex-col items-center text-center'>
