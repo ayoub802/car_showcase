@@ -13,7 +13,7 @@ const PreviewModalcheckout = () => {
       open={previewModal.isOpen} 
       onClose={previewModal.onClose}
     >
-      <CheckoutModale />
+        <CheckoutModale />
     </Modal>
   );
 }

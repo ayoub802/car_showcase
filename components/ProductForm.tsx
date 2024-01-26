@@ -124,7 +124,7 @@ export const ProductForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input disabled={loading} className='!border-[#000] placeholder:text-[#000] bg-transparent' placeholder={t("Nom* et Prénom")} {...field} />
+                    <Input disabled={loading} className='!border-[#000] placeholder:text-[#000] bg-transparent' placeholder={t("Nom et Prénom*")} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -173,7 +173,7 @@ export const ProductForm = ({
                 <FormItem>
                   <FormControl>
                     {/* <Input type="text" disabled={loading} className='!border-[#000] placeholder:text-[#000]' placeholder="Merci d'écriture votre message* " {...field} /> */}
-                    <Textarea  disabled={loading} placeholder={t("Merci d'écriture votre message*")} {...field} className='bg-transparent placeholder:text-[#000] h-52 border border-[#000]'/>
+                    <Textarea  disabled={loading} placeholder={t("Merci d'écrire votre message*")} {...field} className='bg-transparent placeholder:text-[#000] h-52 border border-[#000]'/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -42,6 +42,9 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { url } from 'inspector';
+import getProducts from '@actions/getProducts';
+import { Loader } from '@components/ui/loader';
+import { useRouter } from 'next/navigation';
 
 export const Hero = () => {
     const [hoverStates, setHoverStates] = useState(false);
@@ -139,12 +142,43 @@ export const Hero = () => {
         });
     }, []);
 
+    const [products, setProducts] = useState<any>([])
+    const router = useRouter();
+    const fetchProduct = async () => {
+        try{
+          const response = await getProducts();
+          setProducts(response)
+        }
+        catch(error){
+          console.log(error);
+          
+        }
+      }
+      useEffect(() => {
+        fetchProduct()
+      }, [])
+
+      console.log("The Products =>",products);
+      
+      const productIdToDisplay = "FC-ONE ULTIMATE – PROTECTION PERMANENTE"; 
+      const productIdToDisplay1 = "FC-GLASS – REVÊTEMENT HYDROPHOBE POUR VERRES"; 
+      const productIdToDisplay2 = "FC-TRIM – PROTECTION GARNITURES"; 
+      const productIdToDisplay3 = " FC-ONE SMART – PROTECTION POUR PEINTURES > 5 ANS" 
+      const productToDisplay = products.find((product: any) => product.name === productIdToDisplay);
+      const productToDisplay1 = products.find((product: any) => product.name === productIdToDisplay1);
+      const productToDisplay2 = products.find((product: any) => product.name === productIdToDisplay2);
+      const productToDisplay3 = products.find((product: any) => product.name === productIdToDisplay3);
+      console.log("The Product to Display =>", productToDisplay3);
+
+      const handleClick = (data: any) => {
+        router.push(`/product/${data?.id}`);
+      };
     const {t}  = useTranslation("global")
   return (
     <div className='w-full overflow-hidden bg-[#000]'>
       <Header />
       <div className='mt-[88px] lg:mt-[98px]'>
-        <section className='relative overflow-hidden min-h-[calc(100vh_-_88px)] lg:min-h-[calc(100vh_-_98px)] bg-[#010101] flex flex-wrap pb-0'>
+        <section className='relative overflow-hidden min-h-[calc(100vh_-_88px)] hero_section lg:min-h-[calc(100vh_-_98px)] bg-[#010101] flex flex-wrap pb-0'>
           <Image width={500} height={500} quality={100} src={HeroBanner} className='absolute left-0 top-0 w-full h-full object-cover object-top' alt="" />
           <div className="relative z-[2] w-full container flex justify-start items-center">
             <h2>
@@ -216,14 +250,12 @@ export const Hero = () => {
                 </div>
             </div>
          </section>
-
+{/* 
          <section className='relative overflow-hidden min-h-[60vh] h-[60vh] grid place-content-center bg_withImage'>
-            {/* <div ref={product3DSectionRef}> */}
               <Image src={BackgroundImage} width={5000} height={5000} quality={100} alt='' className='absolute top-0 left-0  w-full h-full' />
               <div ref={product3DSectionRef}>
                  <Image src={Product3D}  width={5000} height={5000} quality={100} alt='' className='w-[70%] h-[500px] object-cover relative z-10' />
               </div>
-            {/* </div> */}
             <div className='w-20 h-28 flex flex-col justify-center items-center absolute top-24 left-[30%] moistrizing-element'>
                 <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
                <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
@@ -240,126 +272,116 @@ export const Hero = () => {
                 <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
                <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
             </div>
-            {/* <div className='w-20 h-28 flex flex-col justify-center items-center absolute top-[55%] left-[60%]'>
-                <div className="w-20 h-20 rounded-full bg-Mgreen mx-auto"></div>
-               <h3 className='text-center mt-2 text-[#fff]'>Moistrizing</h3>
-            </div> */}
-
-           {/* <div className="absolute inset-0 w-full h-full bg-[#00000080]"></div> */}
-           {/* <div className="absolute flex justify-center items-center z-10 w-full top-44 left-0">
-                <div className='flex flex-col items-center text-center'>
-                    <h2 className='uppercase text-[35px] font-semibold text_outline'>Fusiocoat is your new <span className='text_outline-span py-2 px-3 bg-Mgreen text-[#000] rounded-full'>Solution</span> </h2>
-                    <p className='text-[#fff] max-w-[90ch] mt-3 font-[400]'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam odio voluptatem eum hic, ad quod eveniet dolorum error facilis ut quia sapiente ex, vero distinctio commodi, illo repudiandae ipsa.
-                    </p>
-                </div>
-           </div>
-
-           <div className="absolute h-screen w-full z-10 bottom-8 flex justify-center items-end">
-            <div className="flex gap-[150px]">
-                <Link href={"/Boutique"} className='py-2 px-3.5 uppercase font-semibold rounded-full bg-Mgreen text-[#000]'>voir le produit</Link>
-                <Link href={"/Boutique"} className='py-2 px-3.5 uppercase font-semibold rounded-full border border-Mgreen text-Mgreen'>voir boutique</Link>
-            </div>
-           </div> */}
     
-         </section>
+         </section> */}
 
          <section className='bg-white'>
            <div className="container">
-            <div className="relative">
-               <Image src={Carsction} width={1500} height={1500} quality={100} alt='' className='lg:w-[60rem] md:w-[40rem] md:h-[20rem] w-[30rem] h-[13rem] -rotate-90 md:rotate-0 mx-auto lg:h-[30rem]' />
-               <HoverCard open={hoverStates} onOpenChange={(open) => setHoverStates(open)}>
-                <HoverCardTrigger asChild
-                       onMouseEnter={() => setHoverStates(true)}
-                       onTouchStart={() => setHoverStates(true)}
-                >
-                    <div className='absolute top-[50%] md:left-[20%] left-[33%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
-                        
-                    </div>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80 !bg-[#020817]">
-                <div className="flex justify-between items-center space-x-4">
-                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                <Image alt='' src={Product} width={500} height={500} quality={100}/>
-                            </div>
-                            <div>
-                                <h2 className='text-[13px] font-semibold text-[#fff]'>FC-GLASS – REVÊTEMENT HYDROPHOBE POUR VERRES</h2>
-                                <p className='text-[11px] font-[400] text-[#fff]'>33,00MAD – 49,00MAD</p>
-                            </div>
-                        </div>
-                </HoverCardContent>
-                </HoverCard>
+                <div className="relative">
+                    {
+                        products.length > 0
+                        ?
+                        <>
+                            <Image src={Carsction} width={1500} height={1500} quality={100} alt='' className='lg:w-[60rem] md:w-[40rem] md:h-[20rem] w-[30rem] h-[13rem] imgCarCover -rotate-90 md:rotate-0 mx-auto lg:h-[30rem]' />
+                            <HoverCard open={hoverStates} onOpenChange={(open) => setHoverStates(open)}>
+                                <HoverCardTrigger asChild
+                                    onMouseEnter={() => setHoverStates(true)}
+                                    onTouchStart={() => setHoverStates(true)}
+                                >
+                                    <div className='absolute top-[50%] md:left-[20%] left-[33%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
+                                        
+                                    </div>
+                                </HoverCardTrigger>
+                                <HoverCardContent className="w-80 !bg-[#020817]">
+                                <button onClick={() => handleClick(productToDisplay)} className="flex justify-between items-center space-x-4">
+                                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                <Image alt='' src={productToDisplay.images?.[0]?.url} width={500} height={500} quality={100}/>
+                                            </div>
+                                            <div>
+                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay.name}</h2>
+                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay.price},00MAD – {productToDisplay.priceBig},00MAD</p>
+                                            </div>
+                                        </button>
+                                </HoverCardContent>
+                                </HoverCard>
 
-                <HoverCard open={hoverStates1} onOpenChange={(open) => setHoverStates1(open)}>
-                <HoverCardTrigger asChild
-                       onMouseEnter={() => setHoverStates1(true)}
-                       onTouchStart={() => setHoverStates1(true)}
-                >
-                    <div className='absolute md:top-[20%] top-[105%] left-[50%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
-                        
-                    </div>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80 !bg-[#020817]">
-                <div className="flex justify-between items-center space-x-4">
-                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                <Image alt='' src={Product1} width={500} height={500} quality={100}/>
-                            </div>
-                            <div>
-                                <h2 className='text-[13px] font-semibold text-[#fff]'>FC-ONE ULTIMATE – PROTECTION PERMANENTE</h2>
-                                <p className='text-[11px] font-[400] text-[#fff]'>94,00MAD – 144,00MAD</p>
-                            </div>
-                        </div>
-                </HoverCardContent>
-                </HoverCard>
+                                <HoverCard open={hoverStates1} onOpenChange={(open) => setHoverStates1(open)}>
+                                <HoverCardTrigger asChild
+                                    onMouseEnter={() => setHoverStates1(true)}
+                                    onTouchStart={() => setHoverStates1(true)}
+                                >
+                                    <div className='absolute md:top-[20%] top-[105%] left-[50%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
+                                        
+                                    </div>
+                                </HoverCardTrigger>
+                                <HoverCardContent className="w-80 !bg-[#020817]">
+                                <button onClick={() => handleClick(productToDisplay1)} className="flex justify-between items-center space-x-4">
+                                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                <Image alt='' src={productToDisplay1.images?.[0]?.url} width={500} height={500} quality={100}/>
+                                            </div>
+                                            <div>
+                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay1.name}</h2>
+                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay1.price},00MAD – {productToDisplay1.priceBig},00MAD</p>
+                                            </div>
+                                        </button>
+                                </HoverCardContent>
+                                </HoverCard>
 
-                <HoverCard open={hoverStates2} onOpenChange={(open) => setHoverStates2(open)}>
-                <HoverCardTrigger 
-                asChild
-                onMouseEnter={() => setHoverStates2(true)}
-                onTouchStart={() => setHoverStates2(true)}
-                >
-                    <div className='absolute md:top-[30%] -top-[27%] left-[45%] md:left-[80%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
-                        
-                    </div>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80 !bg-[#020817]">
-                    <div className="flex justify-between items-center space-x-4">
-                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                <Image alt='' src={Product2} width={500} height={500} quality={100}/>
-                            </div>
-                            <div>
-                                <h2 className='text-[13px] font-semibold text-[#fff]'>FC-ONE SMART – PROTECTION POUR PEINTURES 5 ANS</h2>
-                                <p className='text-[11px] font-[400] text-[#fff]'>69,00MAD – 89,00MAD</p>
-                            </div>
-                        </div>
-                </HoverCardContent>
-                </HoverCard>
+                                <HoverCard open={hoverStates2} onOpenChange={(open) => setHoverStates2(open)}>
+                                <HoverCardTrigger 
+                                asChild
+                                onMouseEnter={() => setHoverStates2(true)}
+                                onTouchStart={() => setHoverStates2(true)}
+                                >
+                                    <div className='absolute md:top-[30%] -top-[27%] left-[45%] md:left-[80%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
+                                        
+                                    </div>
+                                </HoverCardTrigger>
+                                <HoverCardContent className="w-80 !bg-[#020817]">
+                                    <button onClick={() => handleClick(productToDisplay3)}  className="flex justify-between items-center space-x-4">
+                                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                <Image alt='' src={productToDisplay3.images?.[0]?.url} width={500} height={500} quality={100}/>
+                                            </div>
+                                            <div>
+                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay3.name}</h2>
+                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay3.price},00MAD – {productToDisplay1.priceBig},00MAD</p>
+                                            </div>
+                                        </button>
+                                </HoverCardContent>
+                                </HoverCard>
 
-                <HoverCard open={hoverStates3} onOpenChange={(open) => setHoverStates3(open)}>
-                    <HoverCardTrigger 
-                    asChild
-                    onMouseEnter={() => setHoverStates3(true)}
-                    onTouchStart={() => setHoverStates3(true)}
-                    >
-                        <div className='absolute md:top-[78%] -top-[11%] left-[65%] md:left-[80%] md:w-5 md:h-5 w-3 h-3  pulse rounded-full bg-[#fff] cursor-pointer'>
-                            
-                        </div>
-                    </HoverCardTrigger>
-                    <HoverCardContent className="w-80 !bg-[#020817]">
-                        <div className="flex justify-between items-center space-x-4">
-                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                <Image alt='' src={Product3} width={500} height={500} quality={100}/>
-                            </div>
-                            <div>
-                                <h2 className='text-[13px] font-semibold text-[#fff]'>FC-TRIM – PROTECTION GARNITURES</h2>
-                                <p className='text-[11px] font-[400] text-[#fff]'>39,00MAD – 59,00MAD</p>
-                            </div>
-                        </div>
-                    </HoverCardContent>
-                </HoverCard>
-            </div>
+                                <HoverCard open={hoverStates3} onOpenChange={(open) => setHoverStates3(open)}>
+                                    <HoverCardTrigger 
+                                    asChild
+                                    onMouseEnter={() => setHoverStates3(true)}
+                                    onTouchStart={() => setHoverStates3(true)}
+                                    >
+                                        <div className='absolute md:top-[78%] top-[120%] left-[65%] md:left-[20%] md:w-5 md:h-5 w-3 h-3  pulse rounded-full bg-[#fff] cursor-pointer'>
+                                            
+                                        </div>
+                                    </HoverCardTrigger>
+                                    <HoverCardContent className="w-80 !bg-[#020817]">
+                                        <button onClick={() => handleClick(productToDisplay2)}  className="flex justify-between items-center space-x-4">
+                                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                <Image alt='' src={productToDisplay2.images?.[0]?.url}  width={500} height={500} quality={100}/>
+                                            </div>
+                                            <div>
+                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay2.name}</h2>
+                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay2.price},00MAD – {productToDisplay2.priceBig},00MAD</p>
+                                            </div>
+                                        </button>
+                                    </HoverCardContent>
+                                </HoverCard>
+                        </>
+                        :
+                        <div className='flex items-center justify-center'>
+                        <Loader />
+                      </div>
+                    }
+                </div>
            </div>
          </section>
+
          <ProductCard />
 
 

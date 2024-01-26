@@ -28,19 +28,19 @@ function Contact() {
                             <div className="my-4">
                                 <h3 className='font-medium leading-6'>
                                 <span className='font-bold text-black'>{t('ADRESSE POSTALE')} :</span> <br />
-                                 FUSIOCOAT® : 442 Rue Georges Besse, 30000 Nîmes, France
+                                Morocco — Bd Mohamed Jamal Addorra, Imm BR1B, N3 2eme etage, Lot Al Hamd Ain Sebaa Casablanca, 20250
                                 </h3>
                             </div>
                             <div className="my-4">
                                 <h3 className='font-medium leading-6'>
                                 <span className='font-bold text-black'>{t('ÉCRIVEZ-NOUS')} :</span> <br />
-                                {t('Service Technique')}: technical@fusiocoat.com
+                                {t('Service Technique')}: info@fusiocoat.ma
                                 </h3>
                             </div>
                             <div className="my-4">
                                 <h3 className='font-medium leading-6'>
                                 <span className='font-bold text-black'>{t('ÉCRIVEZ-NOUS')} :</span> <br />
-                                {t('Service Commercial')}: sales@fusiocoat.com
+                                {t('Service Commercial')}: info@fusiocoat.ma
                                 </h3>
                             </div>
 

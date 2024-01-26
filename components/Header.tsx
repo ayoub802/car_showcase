@@ -158,7 +158,7 @@ export const Header = () => {
           
 
 
-            <div className={'fixed py-4 w-full z-[999] left-0 top-0 bg-[#010101]'}>
+            <div className={'fixed py-4 w-full z-[9] left-0 top-0 bg-[#010101]'}>
                 <div className="container">
                     <div className='flex justify-between items-center'>
                       
