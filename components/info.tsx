@@ -91,7 +91,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
   return ( 
     <div>
-      <h1 className="md:text-3xl tex-[18px] font-bold text-gray-900">{data.name}</h1>
+      <h1 className="md:text-3xl tex-[18px] font-bold text-gray-900 hidden md:block">{data.name}</h1>
       <div className="mt-3 flex items-end justify-between">
         <p className="text-[18px] text-gray-900" dangerouslySetInnerHTML={{ __html: data.description}}>
           {/* {data.description} */}
@@ -147,7 +147,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
                       </svg>
               </button>
       </div>
-        <Button onClick={() => onAddToCart(data, quanity, Volume)} className="flex items-center gap-x-2 border-[#000] border hover:!bg-[#000] hover:text-white transition-all duration-300">
+        <Button variant={"info"} size={"info"} onClick={() => onAddToCart(data, quanity, Volume)} className="flex px-4 py-2 items-center gap-x-2 border-[#000] border hover:!bg-[#000] hover:text-white transition-all duration-300">
           Add To Cart
           <ShoppingCart size={20} />
         </Button>

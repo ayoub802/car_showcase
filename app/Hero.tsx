@@ -288,7 +288,7 @@ export const Hero = () => {
                                     onMouseEnter={() => setHoverStates(true)}
                                     onTouchStart={() => setHoverStates(true)}
                                 >
-                                    <div className='absolute top-[50%] md:left-[20%] left-[33%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
+                                    <div className='absolute  md:left-[20%]  top-[105%] left-[50%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
                                         
                                     </div>
                                 </HoverCardTrigger>
@@ -310,7 +310,7 @@ export const Hero = () => {
                                     onMouseEnter={() => setHoverStates1(true)}
                                     onTouchStart={() => setHoverStates1(true)}
                                 >
-                                    <div className='absolute md:top-[20%] top-[105%] left-[50%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
+                                    <div className='absolute md:top-[20%] top-[50%] left-[33%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
                                         
                                     </div>
                                 </HoverCardTrigger>

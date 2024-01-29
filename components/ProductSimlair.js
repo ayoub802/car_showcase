@@ -5,9 +5,10 @@ import useCart from '@/hooks/use-cart';
 import getSmilairProducts from '@/actions/getSimilairProduct';
 import { Expand, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const ProductSimlair =  ({ product }) => {
-    
+  const {t}  = useTranslation("global")
     const [similair, setSimilair] = useState([])
     const previewModal = usePreviewModal();
     const cart = useCart();
@@ -46,7 +47,7 @@ const ProductSimlair =  ({ product }) => {
 
   return (
     <>  
-    <h3 className='font-bold text-[18px] mb-3 gap-2'>Product Similaire</h3>
+    <h3 className='font-bold text-[18px] mb-3 gap-2'>{t("Produit similaire")}</h3>
     <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mx-auto gap-4">
         {
         similair?.length > 0 && similair.slice(0,4).map((item, index) => (

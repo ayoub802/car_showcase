@@ -83,10 +83,10 @@ const ProductCard = () => {
                                 </div>
                               </div>
                               {/* Description */}
-                              <div>
-                                <p className="font-semibold text-lg">{item.name}</p>
-                                <p className="text-sm text-gray-500">{item.category?.name}</p>
-                              </div>
+                              <button onClick={() => handleClick(item)}>
+                                <p className="font-semibold text-lg !text-left">{item.name}</p>
+                                <p className="text-sm text-gray-500 !text-left">{item.category?.name}</p>
+                              </button>
                               {/* Price & Reiew */}
                               <div className="flex items-center justify-between">
                               </div>
