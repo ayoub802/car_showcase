@@ -178,13 +178,13 @@ export const Hero = () => {
     <div className='w-full overflow-hidden bg-[#000]'>
       <Header />
       <div className='mt-[88px] lg:mt-[98px]'>
-        <section className='relative overflow-hidden min-h-[calc(100vh_-_88px)] hero_section lg:min-h-[calc(100vh_-_98px)] bg-[#010101] flex flex-wrap pb-0'>
+        <section className='relative overflow-hidden min-h-[calc(100vh_-_88px)] hero_section lg:min-h-[calc(100vh_-_98px)] bg-[#010101] flex flex-wrap pb-0 !pt-2 sm:!pt-[80px]'>
           <Image width={500} height={500} quality={100} src={HeroBanner} className='absolute left-0 top-0 w-full h-full object-cover object-top' alt="" />
           <div className="relative z-[2] w-full container flex justify-start items-center">
             <h2>
             </h2>
               <div className="row">
-                  <div className="col-md-8 col-8">
+                  <div className="col-md-8 col-10">
                       <p className="text__18 text-Mgreen mb-2">FUSIOCOAT</p>
                       <h1 className="font-semibold text__48 text-Mwhite mb-2">{t('La solution ultime pour une protection maximale')}<br className="hidden xl:block" /> {t('et une esthétique renouvelée de votre voiture.')}</h1>
                       <p className="text__18 text-[#A3A3A3] mb-2">{t("Fusiocoat - l'innovation qui offre une protection exceptionnel le et")} 
@@ -288,7 +288,7 @@ export const Hero = () => {
                                     onMouseEnter={() => setHoverStates(true)}
                                     onTouchStart={() => setHoverStates(true)}
                                 >
-                                    <div className='absolute  md:left-[20%]  top-[105%] left-[50%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
+                                    <div className='absolute  md:left-[20%]  top-[105%] md:top-[50%] left-[50%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
                                         
                                     </div>
                                 </HoverCardTrigger>

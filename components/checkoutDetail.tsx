@@ -121,9 +121,10 @@ export const CheckoutModale = ({
   
   return (
     <>
-        
+    <div className="grid justify-center w-full">
+    <h2 className="text-center uppercase mb-4 font-medium"> Remplire Les Champs</h2>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full max-w-[450px] mx-auto">
+          <form onSubmit={form.handleSubmit(onSubmit)} style={{width: 320}} className="w-full max-w-[400px] mx-auto">
             <div className="grid grid-cols-1 gap-3">
               <FormField
                 control={form.control}
@@ -202,11 +203,14 @@ export const CheckoutModale = ({
               />
 
             </div>
-            <Button disabled={loading} className="max-w-max mx-auto cursor-pointer font-medium text__16 text-Mwhite !rounded-[24px] !border-Mblue bg-Mblue btnClass justify-center !flex uppercase hover:text-[#1e19d8]" type="submit">
+            <Button disabled={loading}  className="max-w-max mx-auto cursor-pointer mt-[25px] font-medium text__16 text-Mwhite !rounded-[24px] !border-Mblue bg-Mblue btnClass justify-center !flex uppercase hover:text-[#1e19d8]" type="submit">
             {t('Checkout')}
             </Button>
           </form>
         </Form>
+
+    </div>
+        
     </>
   );
 };

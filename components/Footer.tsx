@@ -21,20 +21,20 @@ export const Footer = () => {
                     <Image width={100} height={100} quality={100} src={Logo} className='w-[150px] h-[50px] mb-2 mx-auto md:!mx-0' alt="" />
                     <p className="text__16 text-[#D4D4D4] mb-4 text-center md:!text-left">{t('Revêtements céramiques pour voitures, avions, bâteaux, vitrages')}</p>
                     <div className="flex items-center gap-3 justify-center md:justify-normal">
-                        <a href="#!" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
+                        <a href="https://facebook.com/fusiocoat.morocco" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
                         <Facebook
                             size="18"
                             color="#FFF"
                             variant="Bold"
                             />
                         </a>
-                        <a href="#!" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
+                        <a href="https://instagramcom/fusiocoat.morocco" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
                         <Instagram
                             size="18"
                             color="#FFF"
                             />
                         </a>
-                        <a href="#!" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
+                        <a href="https://youtube.com/@fusiocoat.morocco" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
                             <Youtube
                             size="18"
                             color="#FFF"
