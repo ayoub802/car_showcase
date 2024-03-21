@@ -28,7 +28,7 @@ export const Footer = () => {
                             variant="Bold"
                             />
                         </a>
-                        <a href="https://instagramcom/fusiocoat.morocco" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
+                        <a href="https://instagram.com/fusiocoat.morocco" className='border border-Mgreen w-10 h-10 flex justify-center items-center rounded-full'>
                         <Instagram
                             size="18"
                             color="#FFF"
