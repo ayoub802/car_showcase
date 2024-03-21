@@ -73,7 +73,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-between gap-y-2 items-center px-4 py-2 bg-[#262626] rounded-full">
-                <p className="text-center text__14 text-[#A3A3A3] sm:!order-1 order-2">© 2023 FUSIOCOAT® <Link href="https://whd.ma/" >WHD AGENCY.</Link> </p>
+                <p className="text-center text__14 text-[#A3A3A3] sm:!order-1 order-2">© 2023 FUSIOCOAT® <Link href="https://whd.agency/" >WHD AGENCY.</Link> </p>
                 <div className="flex items-center justify-center sm:justify-end gap-6 order-1 sm:!order-2">
                     <a className="inline-block sm:text__16 text__14 text-Mwhite flex-shrink-0" href="/Legal">{t("Mentions légales")}</a>
                     <a className="inline-block sm:text__16  text__14 text-Mwhite flex-shrink-0" href="/terms">{t("Conditions générales de vente")}</a>
