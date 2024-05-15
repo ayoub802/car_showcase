@@ -143,8 +143,10 @@ export const Hero = () => {
     }, []);
 
     const [products, setProducts] = useState<any>([])
+    const [loader, setLoader] = useState<any>(false)
     const router = useRouter();
     const fetchProduct = async () => {
+      setLoader(true)
         try{
           const response = await getProducts();
           setProducts(response)
@@ -153,12 +155,14 @@ export const Hero = () => {
           console.log(error);
           
         }
+        finally{
+          setLoader(false)
+        }
       }
       useEffect(() => {
         fetchProduct()
       }, [])
 
-      console.log("The Products =>",products);
       
       const productIdToDisplay = "FC-ONE ULTIMATE – PROTECTION PERMANENTE"; 
       const productIdToDisplay1 = "FC-GLASS – REVÊTEMENT HYDROPHOBE POUR VERRES"; 
@@ -168,7 +172,8 @@ export const Hero = () => {
       const productToDisplay1 = products.find((product: any) => product.name === productIdToDisplay1);
       const productToDisplay2 = products.find((product: any) => product.name === productIdToDisplay2);
       const productToDisplay3 = products.find((product: any) => product.name === productIdToDisplay3);
-      console.log("The Product to Display =>", productToDisplay3);
+      console.log("The Product to Display =>", productToDisplay ? productToDisplay.images?.[0]?.url : "");
+      console.log("The Products =>",productToDisplay1 ? productToDisplay1 : "");
 
       const handleClick = (data: any) => {
         router.push(`/product/${data?.id}`);
@@ -279,10 +284,16 @@ export const Hero = () => {
            <div className="container">
                 <div className="relative">
                     {
+                      !loader
+                      ?
+                      <>
+                      {
                         products.length > 0
-                        ?
+                        &&
                         <>
                             <Image src={Carsction} width={1500} height={1500} quality={100} alt='' className='lg:w-[60rem] md:w-[40rem] md:h-[20rem] w-[30rem] h-[13rem] imgCarCover -rotate-90 md:rotate-0 mx-auto lg:h-[30rem]' />
+                           {
+                            productToDisplay && (
                             <HoverCard open={hoverStates} onOpenChange={(open) => setHoverStates(open)}>
                                 <HoverCardTrigger asChild
                                     onMouseEnter={() => setHoverStates(true)}
@@ -295,38 +306,45 @@ export const Hero = () => {
                                 <HoverCardContent className="w-80 !bg-[#020817]">
                                 <button onClick={() => handleClick(productToDisplay)} className="flex justify-between items-center space-x-4">
                                             <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <Image alt='' src={productToDisplay.images?.[0]?.url} width={500} height={500} quality={100}/>
+                                                <Image alt='' src={productToDisplay ? productToDisplay.images?.[0]?.url : ""} width={500} height={500} quality={100}/>
                                             </div>
                                             <div>
-                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay.name}</h2>
-                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay.price},00MAD – {productToDisplay.priceBig},00MAD</p>
+                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay ? productToDisplay.name : ""}</h2>
+                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay ? productToDisplay.price : ""},00MAD – {productToDisplay ? productToDisplay.priceBig : ""},00MAD</p>
                                             </div>
                                         </button>
                                 </HoverCardContent>
                                 </HoverCard>
-
-                                <HoverCard open={hoverStates1} onOpenChange={(open) => setHoverStates1(open)}>
-                                <HoverCardTrigger asChild
-                                    onMouseEnter={() => setHoverStates1(true)}
-                                    onTouchStart={() => setHoverStates1(true)}
-                                >
-                                    <div className='absolute md:top-[20%] top-[50%] left-[33%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
-                                        
-                                    </div>
-                                </HoverCardTrigger>
-                                <HoverCardContent className="w-80 !bg-[#020817]">
-                                <button onClick={() => handleClick(productToDisplay1)} className="flex justify-between items-center space-x-4">
-                                            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <Image alt='' src={productToDisplay1.images?.[0]?.url} width={500} height={500} quality={100}/>
-                                            </div>
-                                            <div>
-                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay1.name}</h2>
-                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay1.price},00MAD – {productToDisplay1.priceBig},00MAD</p>
-                                            </div>
-                                        </button>
-                                </HoverCardContent>
-                                </HoverCard>
-
+                            )
+                           }
+                           
+                                {
+                                  productToDisplay1 && (
+                                      <HoverCard open={hoverStates1} onOpenChange={(open) => setHoverStates1(open)}>
+                                      <HoverCardTrigger asChild
+                                          onMouseEnter={() => setHoverStates1(true)}
+                                          onTouchStart={() => setHoverStates1(true)}
+                                      >
+                                          <div className='absolute md:top-[20%] top-[50%] left-[33%] md:w-5 md:h-5 w-3 h-3 pulse rounded-full bg-[#fff] cursor-pointer'>
+                                              
+                                          </div>
+                                      </HoverCardTrigger>
+                                      <HoverCardContent className="w-80 !bg-[#020817]">
+                                      <button onClick={() => handleClick(productToDisplay1)} className="flex justify-between items-center space-x-4">
+                                                  <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                      {/* <Image alt='' src={productToDisplay1.images?.[0]?.url} width={500} height={500} quality={100}/> */}
+                                                  </div>
+                                                  <div>
+                                                      {/* <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay1.name}</h2>
+                                                      <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay1.price},00MAD – {productToDisplay1.priceBig},00MAD</p> */}
+                                                  </div>
+                                              </button>
+                                      </HoverCardContent>
+                                      </HoverCard>
+                                  )
+                                }
+                              {
+                                productToDisplay2 && (
                                 <HoverCard open={hoverStates2} onOpenChange={(open) => setHoverStates2(open)}>
                                 <HoverCardTrigger 
                                 asChild
@@ -340,15 +358,20 @@ export const Hero = () => {
                                 <HoverCardContent className="w-80 !bg-[#020817]">
                                     <button onClick={() => handleClick(productToDisplay3)}  className="flex justify-between items-center space-x-4">
                                             <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <Image alt='' src={productToDisplay3.images?.[0]?.url} width={500} height={500} quality={100}/>
+                                                {/* <Image alt='' src={productToDisplay3.images?.[0]?.url} width={500} height={500} quality={100}/> */}
                                             </div>
                                             <div>
-                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay3.name}</h2>
-                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay3.price},00MAD – {productToDisplay1.priceBig},00MAD</p>
+                                                {/* <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay3.name}</h2>
+                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay3.price},00MAD – {productToDisplay1.priceBig},00MAD</p> */}
                                             </div>
                                         </button>
                                 </HoverCardContent>
                                 </HoverCard>
+                                )
+                              }
+
+                              {
+                                productToDisplay3 && (
 
                                 <HoverCard open={hoverStates3} onOpenChange={(open) => setHoverStates3(open)}>
                                     <HoverCardTrigger 
@@ -363,17 +386,20 @@ export const Hero = () => {
                                     <HoverCardContent className="w-80 !bg-[#020817]">
                                         <button onClick={() => handleClick(productToDisplay2)}  className="flex justify-between items-center space-x-4">
                                             <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <Image alt='' src={productToDisplay2.images?.[0]?.url}  width={500} height={500} quality={100}/>
+                                                {/* <Image alt='' src={productToDisplay2.images?.[0]?.url}  width={500} height={500} quality={100}/> */}
                                             </div>
                                             <div>
-                                                <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay2.name}</h2>
-                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay2.price},00MAD – {productToDisplay2.priceBig},00MAD</p>
+                                                {/* <h2 className='text-[13px] !text-left font-semibold text-[#fff]'>{productToDisplay2.name}</h2>
+                                                <p className='text-[11px] !text-left font-[400] text-[#fff]'>{productToDisplay2.price},00MAD – {productToDisplay2.priceBig},00MAD</p> */}
                                             </div>
                                         </button>
                                     </HoverCardContent>
                                 </HoverCard>
+                                )}
                         </>
-                        :
+                      }
+                      </>
+                      :
                         <div className='flex items-center justify-center'>
                         <Loader />
                       </div>

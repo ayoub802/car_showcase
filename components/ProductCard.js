@@ -11,6 +11,9 @@ import { useTranslation } from 'react-i18next';
 import "../app/App.css"
 
 const ProductCard = () => {
+  const [products, setProducts] = useState([])
+  const router = useRouter();
+  const {t}  = useTranslation("global")
 
   const previewModal = usePreviewModal();
   const cart = useCart();
@@ -23,8 +26,7 @@ const ProductCard = () => {
   const onAddToCart = (data) => {
     cart.addItem(data, 1);
   };
-    const [products, setProducts] = useState([])
-    const router = useRouter();
+
 
     const handleClick = (data) => {
       router.push(`/product/${data?.id}`);
@@ -44,7 +46,6 @@ const ProductCard = () => {
     }, [])
   
     console.log("Products :",products);
-    const {t}  = useTranslation("global")
 
 
   return (
